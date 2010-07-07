@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2005-2007 Benedikt Meurer <benny@xfce.org>
  *
@@ -23,6 +22,9 @@
 
 #ifdef HAVE_STDARG_H
 #include <stdarg.h>
+#endif
+#ifdef HAVE_LOCALE_H
+#include <locale.h>
 #endif
 
 #include <exo/exo.h>
@@ -61,13 +63,19 @@ terminal_dialogs_show_about (GtkWindow *parent)
   {
     "Benedikt Meurer <benny@xfce.org>",
     "Andrew Conkling <andrewski@fr.st>",
+    "Nick Schermer <nick@xfce.org>",
     NULL,
   };
 
-  GdkPixbuf *logo;
+  GdkPixbuf    *logo = NULL;
+  GtkIconTheme *theme;
 
   /* try to load the about logo */
-  logo = gdk_pixbuf_new_from_file_at_size (DATADIR "/icons/hicolor/scalable/apps/Terminal.svg", 168, 168, NULL);
+  theme = gtk_icon_theme_get_default ();
+  if (gtk_icon_theme_has_icon (theme, "utilities-terminal"))
+    logo = gtk_icon_theme_load_icon (theme, "utilities-terminal", 128, GTK_ICON_LOOKUP_FORCE_SVG, NULL);
+  if (logo == NULL)
+    logo = gdk_pixbuf_new_from_file_at_size (DATADIR "/icons/hicolor/scalable/apps/Terminal.svg", 128, 128, NULL);
 
   /* set dialog hook on gtk versions older then 2.18 */
 #if !GTK_CHECK_VERSION (2, 18, 0)
@@ -86,10 +94,11 @@ terminal_dialogs_show_about (GtkWindow *parent)
                          "artists", artists,
                          "comments", _("Xfce Terminal Emulator"),
                          "documenters", documenters,
-                         "copyright", "Copyright \302\251 2003-2007 Benedikt Meurer",
+                         "copyright", "Copyright \302\251 2003-2008 Benedikt Meurer\n"
+                                      "Copyright \302\251 2007-2010 Nick Schermer",
                          "license", XFCE_LICENSE_GPL,
                          "logo", logo,
-                         "program-name", PACKAGE_NAME,
+                         "program-name", g_get_application_name (),
                          "translator-credits", _("translator-credits"),
                          "version", PACKAGE_VERSION,
                          "website", "http://goodies.xfce.org/projects/applications/terminal",
@@ -193,10 +202,43 @@ terminal_dialogs_show_error (gpointer      parent,
 
 
 
+static gboolean
+terminal_dialogs_show_help_ask_online (GtkWindow *parent)
+{
+  GtkWidget *dialog;
+  GtkWidget *button;
+  GtkWidget *image;
+  gint       response_id;
+
+  dialog = gtk_message_dialog_new (parent, GTK_DIALOG_DESTROY_WITH_PARENT,
+                                   GTK_MESSAGE_QUESTION, GTK_BUTTONS_CANCEL,
+                                   _("The %s user manual is not installed on your computer"),
+                                   g_get_application_name ());
+  gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+      _("You can read the user manual online. This manual may however "
+        "not exactly match your %s version."), g_get_application_name ());
+  gtk_window_set_title (GTK_WINDOW (dialog), _("User manual is missing"));
+
+  button = gtk_button_new_with_mnemonic (_("_Read Online"));
+  gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, GTK_RESPONSE_ACCEPT);
+  gtk_widget_show (button);
+
+  image = gtk_image_new_from_icon_name ("web-browser", GTK_ICON_SIZE_BUTTON);
+  gtk_button_set_image (GTK_BUTTON (button), image);
+  gtk_widget_show (image);
+
+  response_id = gtk_dialog_run (GTK_DIALOG (dialog));
+
+  gtk_widget_destroy (dialog);
+
+  return (response_id == GTK_RESPONSE_ACCEPT);
+}
+
+
+
 /**
  * terminal_dialogs_show_help:
- * @parent : a #GtkWidget on which the user manual should be shown, or a #GdkScreen
- *           if no #GtkWidget is known. May also be %NULL, in which case the default
+ * @parent : a #GtkWindow.
  *           #GdkScreen will be used.
  * @page   : the name of the page of the user manual to display or %NULL to display
  *           the overview page.
@@ -207,54 +249,61 @@ terminal_dialogs_show_error (gpointer      parent,
  * of the HTML file to display. @offset may refer to a anchor in the @page.
  **/
 void
-terminal_dialogs_show_help (gpointer     parent,
+terminal_dialogs_show_help (GtkWindow   *parent,
                             const gchar *page,
                             const gchar *offset)
 {
-  GdkScreen *screen;
-  GError    *error = NULL;
-  gchar     *command;
-  gchar     *tmp;
+  GError   *error = NULL;
+  gchar    *filename;
+  gchar    *locale;
+  gboolean  exists;
+  gchar    *uri = NULL;
 
-  /* determine the screen on which to launch the help */
-  if (G_UNLIKELY (parent == NULL))
-    screen = gdk_screen_get_default ();
-  else if (GDK_IS_SCREEN (parent))
-    screen = GDK_SCREEN (parent);
+  terminal_return_if_fail (GTK_IS_WINDOW (parent));
+
+  /* use index page */
+  if (page == NULL)
+    page = "index.html";
+
+  /* get the locale of the user */
+  locale = g_strdup (setlocale (LC_MESSAGES, NULL));
+  if (G_LIKELY (locale != NULL))
+    locale = g_strdelimit (locale, "._", '\0');
   else
-    screen = gtk_widget_get_screen (GTK_WIDGET (parent));
+    locale = g_strdup ("C");
 
-  /* generate the command for the documentation browser */
-  command = g_strdup (LIBEXECDIR "/TerminalHelp");
-
-  /* check if a page is given */
-  if (G_UNLIKELY (page != NULL))
+  /* check if the help page exists on the system */
+  filename = g_build_filename (HELPDIR, locale, page, NULL);
+  exists = g_file_test (filename, G_FILE_TEST_EXISTS);
+  if (!exists && strcmp (locale, "C") != 0)
     {
-      /* append page as second parameter */
-      tmp = g_strconcat (command, " ", page, NULL);
-      g_free (command);
-      command = tmp;
-
-      /* check if an offset is given */
-      if (G_UNLIKELY (offset != NULL))
-        {
-          /* append offset as third parameter */
-          tmp = g_strconcat (command, " ", offset, NULL);
-          g_free (command);
-          command = tmp;
-        }
+      g_free (filename);
+      filename = g_build_filename (HELPDIR, "C", page, NULL);
+      exists = g_file_test (filename, G_FILE_TEST_EXISTS);
     }
 
+  /* build the full uri, fallback to online docs if nothing was found */
+  if (G_LIKELY (exists))
+    uri = g_strconcat ("file://", filename, "#", offset, NULL);
+  else if (terminal_dialogs_show_help_ask_online (parent))
+    uri = g_strconcat ("http://foo-projects.org/~nick/docs/terminal/?lang=",
+                       locale, "&page=", page, "&offset=", offset, NULL);
+
+  g_free (filename);
+  g_free (locale);
+
   /* try to run the documentation browser */
-  if (!gdk_spawn_command_line_on_screen (screen, command, &error))
+  if (uri != NULL
+      && !exo_execute_preferred_application_on_screen ("WebBrowser", uri, NULL,
+                                                       NULL, gtk_window_get_screen (parent),
+                                                       &error))
     {
       /* display an error message to the user */
       terminal_dialogs_show_error (parent, error, _("Failed to open the documentation browser"));
       g_error_free (error);
     }
 
-  /* cleanup */
-  g_free (command);
+  g_free (uri);
 }
 
 

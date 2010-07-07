@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2004-2007 os-cillation e.K.
  *
@@ -32,7 +31,7 @@ G_BEGIN_DECLS
 #define TERMINAL_STOCK_SHOWMENU     "terminal-showmenu"
 #define TERMINAL_STOCK_COMPOSE      "terminal-compose"
 
-void terminal_stock_init (void);
+gboolean terminal_stock_init (void);
 
 G_END_DECLS
 

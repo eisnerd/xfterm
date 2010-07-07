@@ -6,102 +6,102 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Terminal 0.2.10\n"
+"Project-Id-Version: Terminal git version\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-14 16:03+0100\n"
-"PO-Revision-Date: 2009-07-25 21:25+0200\n"
+"POT-Creation-Date: 2010-04-12 19:57+0200\n"
+"PO-Revision-Date: 2010-01-29 14:09+0200\n"
 "Last-Translator: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
-#: ../terminal/main.c:48
+#: ../terminal/main.c:52
 msgid "Usage:"
 msgstr "Χρήση:"
 
-#: ../terminal/main.c:48
+#: ../terminal/main.c:52
 msgid "OPTION"
 msgstr "ΕΠΙΛΟΓΗ"
 
-#: ../terminal/main.c:53
+#: ../terminal/main.c:57
 msgid "General Options"
 msgstr "Γενικές επιλογές"
 
 #. parameter of --default-display
 #. parameter of --display
-#: ../terminal/main.c:55 ../terminal/main.c:81
-#, fuzzy
+#: ../terminal/main.c:59 ../terminal/main.c:85
 msgid "display"
-msgstr "Δεν προβάλλεται"
+msgstr "προβολή"
 
 #. parameter of --default-working-directory
 #. parameter of --working-directory
-#: ../terminal/main.c:57 ../terminal/main.c:72
+#: ../terminal/main.c:61 ../terminal/main.c:76
 msgid "directory"
-msgstr ""
+msgstr "κατάλογος"
 
-#: ../terminal/main.c:61
+#: ../terminal/main.c:65
 msgid "Window or Tab Separators"
 msgstr "Διαχωριστές παραθύρων ή καρτελών"
 
-#: ../terminal/main.c:66
+#: ../terminal/main.c:70
 msgid "Tab Options"
 msgstr "Επιλογές καρτέλας"
 
 #. parameter of --command
-#: ../terminal/main.c:68
-#, fuzzy
+#: ../terminal/main.c:72
 msgid "command"
-msgstr "Εντολή"
+msgstr "εντολή"
 
 #. parameter of --title
-#: ../terminal/main.c:70
-#, fuzzy
+#: ../terminal/main.c:74
 msgid "title"
-msgstr "Τίτλος"
+msgstr "τίτλος"
 
-#: ../terminal/main.c:79
+#: ../terminal/main.c:83
 msgid "Window Options"
 msgstr "Επιλογές παραθύρου"
 
 #. parameter of --geometry
-#: ../terminal/main.c:83
+#: ../terminal/main.c:87
 msgid "geometry"
-msgstr ""
+msgstr "γεωμετρία"
 
 #. parameter of --role
-#: ../terminal/main.c:85
+#: ../terminal/main.c:89
 msgid "role"
-msgstr ""
+msgstr "ρόλος"
 
 #. parameter of --startup-id
-#: ../terminal/main.c:87
-#, fuzzy
+#: ../terminal/main.c:91
 msgid "string"
-msgstr "Προειδοποίηση"
+msgstr "αλφαρηθμιτικό"
 
 #. parameter of --icon
-#: ../terminal/main.c:89
-#, fuzzy
+#: ../terminal/main.c:93
 msgid "icon"
-msgstr "Δράση"
+msgstr "πλακίδιο"
 
-#: ../terminal/main.c:91
+#: ../terminal/main.c:95
 #, c-format
 msgid "See the %s man page for full explanation of the options above."
 msgstr ""
+"Δείτε την %s σελίδα του manual για λεπτομερή εξήγηση όλων των επιλογών "
+"παραπάνω."
 
-#: ../terminal/main.c:118 ../terminal/terminal-preferences.c:1263
-#: ../terminal/terminal-shortcut-editor.c:120 ../Terminal.desktop.in.h:1
+#: ../terminal/main.c:126 ../terminal/terminal-preferences.c:1262
+#: ../terminal/terminal-shortcut-editor.c:119 ../Terminal.desktop.in.in.h:1
 msgid "Terminal"
 msgstr "Τερματικό"
 
-#: ../terminal/main.c:135
+#: ../terminal/main.c:144
 #, c-format
 msgid ""
-"%s (Xfce %s)\n"
+"%s %s (Xfce %s)\n"
 "\n"
 "Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -112,7 +112,7 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr ""
-"%s (Xfce %s)\n"
+"%s %s (Xfce %s)\n"
 "\n"
 "Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -123,48 +123,68 @@ msgstr ""
 "\n"
 "Παρακαλώ αναφέρετε σφάλματα στο <%s>.\n"
 
-#: ../terminal/main.c:239
+#: ../terminal/main.c:250
 #, c-format
 msgid "Unable to register terminal service: %s\n"
 msgstr "Δεν ήταν δυνατή η καταχώρηση της υπηρεσίας τερματικού: %s\n"
 
-#: ../terminal/terminal-app.c:554
+#: ../terminal/terminal-app.c:516
 #, c-format
 msgid "Invalid geometry string \"%s\"\n"
 msgstr "Μη έγκυρο αλφαριθμητικό γεωμετρίας \"%s\"\"\n"
 
-#: ../terminal/terminal-dbus.c:108
+#: ../terminal/terminal-dbus.c:107
 msgid "User id mismatch"
 msgstr "Το αναγνωριστικό χρήστη δεν ταιριάζει"
 
-#: ../terminal/terminal-dbus.c:134
+#: ../terminal/terminal-dbus.c:133
 #, c-format
 msgid "D-BUS message bus disconnected, exiting...\n"
 msgstr "Ο δίαυλος μηνυμάτων D-BUS αποσυνδέθηκε, έξοδος...\n"
 
-#: ../terminal/terminal-dbus.c:196
+#: ../terminal/terminal-dbus.c:195
 #, c-format
 msgid "Unable to register object %s"
 msgstr "Δεν ήταν δυνατή η εγγραφή του αντικειμένου %s"
 
-#: ../terminal/terminal-dialogs.c:87 ../Terminal-default-apps.xml.in.h:1
+#: ../terminal/terminal-dialogs.c:95 ../Terminal-default-apps.xml.in.in.h:1
 msgid "Xfce Terminal Emulator"
 msgstr "Προσομοίωση τερματικού Xfce"
 
-#: ../terminal/terminal-dialogs.c:93
+#: ../terminal/terminal-dialogs.c:102
 msgid "translator-credits"
 msgstr "Σταύρος Γιαννούρης <stavrosg@serverhive.com>"
 
-#: ../terminal/terminal-dialogs.c:96
+#: ../terminal/terminal-dialogs.c:105
 msgid "Visit Terminal website"
+msgstr "Επισκεφτείτε την ιστοσελίδα του terminal"
+
+#: ../terminal/terminal-dialogs.c:215
+#, c-format
+msgid "The %s user manual is not installed on your computer"
+msgstr ""
+
+#: ../terminal/terminal-dialogs.c:218
+#, c-format
+msgid ""
+"You can read the user manual online. This manual may however not exactly "
+"match your %s version."
+msgstr ""
+
+#: ../terminal/terminal-dialogs.c:220
+msgid "User manual is missing"
+msgstr ""
+
+#: ../terminal/terminal-dialogs.c:222
+msgid "_Read Online"
 msgstr ""
 
 #. display an error message to the user
-#: ../terminal/terminal-dialogs.c:252
+#: ../terminal/terminal-dialogs.c:302
 msgid "Failed to open the documentation browser"
 msgstr "Το άνοιγμα του αναγνώστη τεκμηρίωσης απέτυχε"
 
-#: ../terminal/terminal-options.c:206
+#: ../terminal/terminal-options.c:210
 #, c-format
 msgid ""
 "Option \"--default-display\" requires specifying the default X display as "
@@ -173,7 +193,7 @@ msgstr ""
 "Η επιλογή \"--default-display\" απαιτεί τον προσδιορισμό του προκαθορισμένου "
 "X display ως παράμετρο"
 
-#: ../terminal/terminal-options.c:221
+#: ../terminal/terminal-options.c:225
 #, c-format
 msgid ""
 "Option \"--default-working-directory\" requires specifying the default "
@@ -182,7 +202,7 @@ msgstr ""
 "Η επιλογή \"--default-working-directory\" απαιτεί τον προσδιορισμό του "
 "προκαθορισμένου καταλόγου στον οποίο θα ξεκινήσει ως παράμετρο"
 
-#: ../terminal/terminal-options.c:237
+#: ../terminal/terminal-options.c:241
 #, c-format
 msgid ""
 "Option \"--execute/-x\" requires specifying the command to run on the rest "
@@ -191,7 +211,7 @@ msgstr ""
 "Η επιλογή \"--execute/-x\" απαιτεί τον προσδιορισμό της εντολής που θα "
 "εκτελεστεί στο υπόλοιπο της εντολής"
 
-#: ../terminal/terminal-options.c:254
+#: ../terminal/terminal-options.c:258
 #, c-format
 msgid ""
 "Option \"--command/-e\" requires specifying the command to run as its "
@@ -200,7 +220,7 @@ msgstr ""
 "Η επιλογή \"--command/-e\" απαιτεί τον προσδιορισμό της εντολής που θα "
 "εκτελεστεί ως παράμετρο"
 
-#: ../terminal/terminal-options.c:271
+#: ../terminal/terminal-options.c:275
 #, c-format
 msgid ""
 "Option \"--working-directory\" requires specifying the working directory as "
@@ -209,21 +229,21 @@ msgstr ""
 "Η επιλογή \"--working-directory\" απαιτεί τον προσδιορισμό του καταλόγου "
 "στον οποίο θα ξεκινήσει ως παράμετρο"
 
-#: ../terminal/terminal-options.c:286
+#: ../terminal/terminal-options.c:290
 #, c-format
 msgid "Option \"--title/-T\" requires specifying the title as its parameter"
 msgstr ""
 "Η εντολή \"--working-directory\" απαιτεί τον προσδιορισμό του τίτλου ως "
 "παράμετρο"
 
-#: ../terminal/terminal-options.c:305
+#: ../terminal/terminal-options.c:309
 #, c-format
 msgid ""
 "Option \"--display\" requires specifying the X display as its parameters"
 msgstr ""
 "Η Επιλογή \"--display\" απαιτεί τον προσδιορισμό του X display ως παράμετρο"
 
-#: ../terminal/terminal-options.c:320
+#: ../terminal/terminal-options.c:324
 #, c-format
 msgid ""
 "Option \"--geometry\" requires specifying the window geometry as its "
@@ -232,14 +252,14 @@ msgstr ""
 "Η επιλογή \"--geometry\" απαιτεί τον προσδιορισμό της γεωμετρίας του "
 "παραθύρου ως παράμετρο"
 
-#: ../terminal/terminal-options.c:335
+#: ../terminal/terminal-options.c:339
 #, c-format
 msgid "Option \"--role\" requires specifying the window role as its parameter"
 msgstr ""
 "Η επιλογή \"--role\" απαιτεί τον προσδιορισμό του ρόλου του παραθύρου ως "
 "παράμετρο"
 
-#: ../terminal/terminal-options.c:350
+#: ../terminal/terminal-options.c:354
 #, c-format
 msgid ""
 "Option \"--startup-id\" requires specifying the startup id as its parameter"
@@ -247,7 +267,7 @@ msgstr ""
 "Η επιλογή \"--startup-id\" απαιτεί τον προσδιορισμό του αναγνωριστικού "
 "εκκίνησης ως παράμετρο"
 
-#: ../terminal/terminal-options.c:365
+#: ../terminal/terminal-options.c:369
 #, c-format
 msgid ""
 "Option \"--icon/-I\" requires specifying an icon name or filename as its "
@@ -256,226 +276,226 @@ msgstr ""
 "Η επιλογή \"--icon/-I\" απαιτεί τον καθορισμό ενός ονόματος εικονιδίου ή "
 "όνομα αρχείου ως παράμετρο"
 
-#: ../terminal/terminal-options.c:419
+#: ../terminal/terminal-options.c:423
 #, c-format
 msgid "Unknown option \"%s\""
 msgstr "Άγνωστη επιλογή \"%s\""
 
-#: ../terminal/terminal-preferences-dialog.c:215
+#: ../terminal/terminal-preferences-dialog.c:227
 msgid "All Files"
 msgstr "Όλα τα αρχεία"
 
-#: ../terminal/terminal-preferences-dialog.c:221
+#: ../terminal/terminal-preferences-dialog.c:233
 msgid "Image Files"
 msgstr "Αρχεία εικόνων"
 
-#: ../terminal/terminal-preferences.c:310
+#: ../terminal/terminal-preferences.c:309
 msgid "Open Tab"
 msgstr "Άνοιγμα καρτέλας"
 
-#: ../terminal/terminal-preferences.c:321
+#: ../terminal/terminal-preferences.c:320
 msgid "Open Terminal"
 msgstr "Άνοιγμα τερματικού"
 
-#: ../terminal/terminal-preferences.c:332
+#: ../terminal/terminal-preferences.c:331
 msgid "Detach Tab"
 msgstr "Απόσπαση καρτέλας"
 
-#: ../terminal/terminal-preferences.c:343
+#: ../terminal/terminal-preferences.c:342
 msgid "Close Tab"
 msgstr "Κλείσιμο καρτέλας"
 
-#: ../terminal/terminal-preferences.c:354
+#: ../terminal/terminal-preferences.c:353
 msgid "Close Window"
 msgstr "Κλείσιμο παραθύρου"
 
-#: ../terminal/terminal-preferences.c:365
+#: ../terminal/terminal-preferences.c:364
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: ../terminal/terminal-preferences.c:376
+#: ../terminal/terminal-preferences.c:375
 msgid "Paste"
 msgstr "Επικόλληση"
 
-#: ../terminal/terminal-preferences.c:387
+#: ../terminal/terminal-preferences.c:386
 msgid "Paste Selection"
 msgstr "Επικόλληση επιλογής"
 
-#: ../terminal/terminal-preferences.c:398
+#: ../terminal/terminal-preferences.c:397
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: ../terminal/terminal-preferences.c:409
+#: ../terminal/terminal-preferences.c:408
 msgid "Show menubar"
 msgstr "Προβολή μπάρας μενού"
 
-#: ../terminal/terminal-preferences.c:420
+#: ../terminal/terminal-preferences.c:419
 msgid "Show toolbars"
 msgstr "Εμφάνιση εργαλειοθηκών"
 
-#: ../terminal/terminal-preferences.c:431
+#: ../terminal/terminal-preferences.c:430
 msgid "Show borders"
 msgstr "Εμφάνιση περιγραμμάτων παραθύρου"
 
-#: ../terminal/terminal-preferences.c:442
+#: ../terminal/terminal-preferences.c:441
 msgid "Fullscreen"
 msgstr "Πλήρης οθόνη"
 
-#: ../terminal/terminal-preferences.c:453
+#: ../terminal/terminal-preferences.c:452
 msgid "Set Title"
 msgstr "Καθορισμός τίτλου"
 
-#: ../terminal/terminal-preferences.c:464 ../terminal/terminal-window.c:237
+#: ../terminal/terminal-preferences.c:463 ../terminal/terminal-window.c:236
 msgid "Reset"
 msgstr "Αρχικοποίηση"
 
-#: ../terminal/terminal-preferences.c:475
+#: ../terminal/terminal-preferences.c:474
 msgid "Reset and Clear"
 msgstr "Αρχικοποίηση και Καθαρισμός"
 
-#: ../terminal/terminal-preferences.c:486
+#: ../terminal/terminal-preferences.c:485
 msgid "Previous Tab"
 msgstr "Προηγούμενη καρτέλα"
 
-#: ../terminal/terminal-preferences.c:497
+#: ../terminal/terminal-preferences.c:496
 msgid "Next Tab"
 msgstr "Επόμενη καρτέλα"
 
-#: ../terminal/terminal-preferences.c:508
+#: ../terminal/terminal-preferences.c:507
 msgid "Switch to Tab 1"
 msgstr "Μετάβαση στην Καρτέλα 1"
 
-#: ../terminal/terminal-preferences.c:519
+#: ../terminal/terminal-preferences.c:518
 msgid "Switch to Tab 2"
 msgstr "Μετάβαση στην Καρτέλα 2"
 
-#: ../terminal/terminal-preferences.c:530
+#: ../terminal/terminal-preferences.c:529
 msgid "Switch to Tab 3"
 msgstr "Μετάβαση στην Καρτέλα 3"
 
-#: ../terminal/terminal-preferences.c:541
+#: ../terminal/terminal-preferences.c:540
 msgid "Switch to Tab 4"
 msgstr "Μετάβαση στην Καρτέλα 4"
 
-#: ../terminal/terminal-preferences.c:552
+#: ../terminal/terminal-preferences.c:551
 msgid "Switch to Tab 5"
 msgstr "Μετάβαση στην Καρτέλα 5"
 
-#: ../terminal/terminal-preferences.c:563
+#: ../terminal/terminal-preferences.c:562
 msgid "Switch to Tab 6"
 msgstr "Μετάβαση στην Καρτέλα 6"
 
-#: ../terminal/terminal-preferences.c:574
+#: ../terminal/terminal-preferences.c:573
 msgid "Switch to Tab 7"
 msgstr "Μετάβαση στην Καρτέλα 7"
 
-#: ../terminal/terminal-preferences.c:585
+#: ../terminal/terminal-preferences.c:584
 msgid "Switch to Tab 8"
 msgstr "Μετάβαση στην Καρτέλα 8"
 
-#: ../terminal/terminal-preferences.c:596
+#: ../terminal/terminal-preferences.c:595
 msgid "Switch to Tab 9"
 msgstr "Μετάβαση στην Καρτέλα 9"
 
-#: ../terminal/terminal-preferences.c:607
+#: ../terminal/terminal-preferences.c:606
 msgid "Contents"
 msgstr "Περιεχόμενα"
 
 #. TRANSLATORS: title for the tab/window used when all other
 #. * possible titles were empty strings
-#: ../terminal/terminal-screen.c:393 ../terminal/terminal-screen.c:592
-#: ../terminal/terminal-screen.c:1533
+#: ../terminal/terminal-screen.c:392 ../terminal/terminal-screen.c:591
+#: ../terminal/terminal-screen.c:1532
 msgid "Untitled"
 msgstr "Ανώνυμο"
 
-#: ../terminal/terminal-screen.c:483
+#: ../terminal/terminal-screen.c:482
 #, c-format
 msgid "Unable to determine your login shell."
 msgstr "Δεν ήταν δυνατός ο προσδιορισμός του κελύφους εισόδου σας."
 
 #. tell the user that we were unable to execute the command
-#: ../terminal/terminal-screen.c:1294
+#: ../terminal/terminal-screen.c:1293
 msgid "Failed to execute child"
 msgstr "Αποτυχία εκτέλεσης θυγατρικής διεργασίας"
 
-#: ../terminal/terminal-screen.c:1874
+#: ../terminal/terminal-screen.c:1854
 msgid "Close this tab"
 msgstr "Κλείσιμο αυτής της καρτέλας"
 
-#: ../terminal/terminal-shortcut-editor.c:89
+#: ../terminal/terminal-shortcut-editor.c:88
 msgid "File"
 msgstr "Αρχείο"
 
-#: ../terminal/terminal-shortcut-editor.c:100
+#: ../terminal/terminal-shortcut-editor.c:99
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: ../terminal/terminal-shortcut-editor.c:110
+#: ../terminal/terminal-shortcut-editor.c:109
 msgid "View"
 msgstr "Προβολή"
 
-#: ../terminal/terminal-shortcut-editor.c:129
+#: ../terminal/terminal-shortcut-editor.c:128
 msgid "Go"
 msgstr "Μετάβαση"
 
-#: ../terminal/terminal-shortcut-editor.c:146
+#: ../terminal/terminal-shortcut-editor.c:145
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: ../terminal/terminal-shortcut-editor.c:210
-#: ../terminal/terminal-shortcut-editor.c:506 ../Terminal.glade.h:24
+#: ../terminal/terminal-shortcut-editor.c:209
+#: ../terminal/terminal-shortcut-editor.c:505 ../Terminal.glade.h:24
 msgid "Disabled"
 msgstr "Απενεργοποιημένο"
 
-#: ../terminal/terminal-shortcut-editor.c:222
+#: ../terminal/terminal-shortcut-editor.c:221
 msgid "Action"
 msgstr "Δράση"
 
-#: ../terminal/terminal-shortcut-editor.c:229
+#: ../terminal/terminal-shortcut-editor.c:228
 msgid "Shortcut key"
 msgstr "Πλήκτρο συντόμευσης"
 
-#: ../terminal/terminal-shortcut-editor.c:329
+#: ../terminal/terminal-shortcut-editor.c:328
 msgid "Compose shortcut"
 msgstr "Δημιουργία συντόμευσης"
 
-#: ../terminal/terminal-shortcut-editor.c:334
+#: ../terminal/terminal-shortcut-editor.c:333
 msgid "Clea_r"
 msgstr "Εκκαθά_ριση"
 
-#: ../terminal/terminal-shortcut-editor.c:353
+#: ../terminal/terminal-shortcut-editor.c:352
 msgid "Compose shortcut for:"
 msgstr "Δημιουργία συντόμευσης για:"
 
-#: ../terminal/terminal-shortcut-editor.c:375
+#: ../terminal/terminal-shortcut-editor.c:374
 msgid "Failed to acquire keyboard"
 msgstr "Αδύνατη η λήψη του πληκτρολογίου"
 
-#: ../terminal/terminal-shortcut-editor.c:377
+#: ../terminal/terminal-shortcut-editor.c:376
 msgid "Another application has already acquired control over your keyboard."
 msgstr "Μια άλλη εφαρμογή έχει ήδη λάβει τον έλεγχο του πληκτρολογίου σας."
 
-#: ../terminal/terminal-toolbars-view.c:113
+#: ../terminal/terminal-toolbars-view.c:112
 msgid "Toolbar Editor"
 msgstr "Επεξεργαστής εργαλειοθήκης"
 
-#: ../terminal/terminal-widget.c:321
+#: ../terminal/terminal-widget.c:320
 msgid "Copy Email Address"
 msgstr "Αντιγραφή διεύθυνσης email"
 
-#: ../terminal/terminal-widget.c:322
+#: ../terminal/terminal-widget.c:321
 msgid "Compose Email"
 msgstr "Σύνθεση email"
 
-#: ../terminal/terminal-widget.c:326
+#: ../terminal/terminal-widget.c:325
 msgid "Copy Link Address"
 msgstr "Αντιγραφή διεύθυνσης συνδέσμου"
 
-#: ../terminal/terminal-widget.c:327
+#: ../terminal/terminal-widget.c:326
 msgid "Open Link"
 msgstr "Άνοιγμα συνδέσμου"
 
-#: ../terminal/terminal-widget.c:481
+#: ../terminal/terminal-widget.c:480
 #, c-format
 msgid ""
 "Unable to drop selection of type text/plain to terminal: Wrong format (%d) "
@@ -484,7 +504,7 @@ msgstr ""
 "Αδυναμία επικόλλησης της επιλογής απλού/κειμένου στο τερματικό: Εσφαλμένος "
 "τύπος (%d) ή μέγεθος (%d)\n"
 
-#: ../terminal/terminal-widget.c:497
+#: ../terminal/terminal-widget.c:496
 #, c-format
 msgid ""
 "Unable to drop Mozilla URL on terminal: Wrong format (%d) or length (%d)\n"
@@ -492,234 +512,233 @@ msgstr ""
 "Αδυναμία επικόλλησης του Mozilla URL στο τερματικό: Εσφαλμένος τύπος (%d) ή "
 "μέγεθος (%d)\n"
 
-#: ../terminal/terminal-widget.c:523
+#: ../terminal/terminal-widget.c:522
 #, c-format
 msgid "Unable to drop URI list on terminal: Wrong format (%d) or length (%d)\n"
 msgstr ""
 "Αδυναμία επικόλλησης λίστας URI στο τερματικό: Εσφαλμένος τύπος (%d) ή "
 "μέγεθος (%d)\n"
 
-#: ../terminal/terminal-widget.c:568
+#: ../terminal/terminal-widget.c:567
 #, c-format
 msgid "Received invalid color data: Wrong format (%d) or length (%d)\n"
 msgstr "Λήφθηκαν μη έγκυρα χρώματα: Εσφαλμένη μορφή (%d) ή μήκος (%d)\n"
 
 #. tell the user that we were unable to open the responsible application
-#: ../terminal/terminal-widget.c:705
+#: ../terminal/terminal-widget.c:704
 #, c-format
 msgid "Failed to open the URL `%s'"
 msgstr "Το άνοιγμα του URL \"%s\" απέτυχε."
 
-#: ../terminal/terminal-window.c:222
+#: ../terminal/terminal-window.c:221
 msgid "_File"
 msgstr "_Αρχείο"
 
-#: ../terminal/terminal-window.c:223
+#: ../terminal/terminal-window.c:222
 msgid "Open _Tab"
 msgstr "Άνοιγμα _καρτέλας"
 
-#: ../terminal/terminal-window.c:223
+#: ../terminal/terminal-window.c:222
 msgid "Open a new terminal tab"
 msgstr "Άνοιγμα νέας καρτέλας τερματικού"
 
-#: ../terminal/terminal-window.c:224
+#: ../terminal/terminal-window.c:223
 msgid "Open T_erminal"
 msgstr "Άνοιγμα _τερματικού"
 
-#: ../terminal/terminal-window.c:224
+#: ../terminal/terminal-window.c:223
 msgid "Open a new terminal window"
 msgstr "Άνοιγμα ενός νέου παραθύρου τερματικού"
 
-#: ../terminal/terminal-window.c:225
+#: ../terminal/terminal-window.c:224
 msgid "_Detach Tab"
 msgstr "Από_σπαση καρτέλας"
 
-#: ../terminal/terminal-window.c:225
+#: ../terminal/terminal-window.c:224
 msgid "Open a new window for the current terminal tab"
 msgstr "Ανοίγει νέο παράθυρο με την τρέχουσα καρτέλα"
 
-#: ../terminal/terminal-window.c:226
+#: ../terminal/terminal-window.c:225
 msgid "C_lose Tab"
 msgstr "Κ_λείσιμο καρτέλας"
 
-#: ../terminal/terminal-window.c:226
+#: ../terminal/terminal-window.c:225
 msgid "Close the current terminal tab"
 msgstr "Κλείνει την τρέχουσα καρτέλα"
 
-#: ../terminal/terminal-window.c:227
+#: ../terminal/terminal-window.c:226
 msgid "_Close Window"
 msgstr "_Κλείσιμο παραθύρου"
 
-#: ../terminal/terminal-window.c:227
+#: ../terminal/terminal-window.c:226
 msgid "Close the terminal window"
 msgstr "Κλείσιμο παραθύρου τερματικού"
 
-#: ../terminal/terminal-window.c:228
+#: ../terminal/terminal-window.c:227
 msgid "_Edit"
 msgstr "_Επεξεργασία"
 
-#: ../terminal/terminal-window.c:229
+#: ../terminal/terminal-window.c:228
 msgid "_Copy"
 msgstr "Α_ντιγραφή"
 
-#: ../terminal/terminal-window.c:229
+#: ../terminal/terminal-window.c:228
 msgid "Copy to clipboard"
 msgstr "Αντιγραφή στο πρόχειρο"
 
-#: ../terminal/terminal-window.c:230
+#: ../terminal/terminal-window.c:229
 msgid "_Paste"
 msgstr "_Επικόλληση"
 
-#: ../terminal/terminal-window.c:230
+#: ../terminal/terminal-window.c:229
 msgid "Paste from clipboard"
 msgstr "Επικόλληση από το πρόχειρο"
 
-#: ../terminal/terminal-window.c:231
+#: ../terminal/terminal-window.c:230
 msgid "Paste _Selection"
 msgstr "Επικόλληση _επιλογής"
 
-#: ../terminal/terminal-window.c:231
+#: ../terminal/terminal-window.c:230
 msgid "Paste from primary selection"
 msgstr "Επικόλληση από την κύρια επιλογή"
 
-#: ../terminal/terminal-window.c:232
+#: ../terminal/terminal-window.c:231
 msgid "_Toolbars..."
 msgstr "_Εργαλειοθήκες..."
 
-#: ../terminal/terminal-window.c:232
+#: ../terminal/terminal-window.c:231
 msgid "Customize the toolbars"
 msgstr "Προσαρμογή εργαλειοθηκών"
 
-#: ../terminal/terminal-window.c:233
+#: ../terminal/terminal-window.c:232
 msgid "Pr_eferences..."
 msgstr "_Προτιμήσεις..."
 
-#: ../terminal/terminal-window.c:233
+#: ../terminal/terminal-window.c:232
 msgid "Open the Terminal preferences dialog"
 msgstr "Άνοιγμα του διαλόγου προτιμήσεων του τερματικού"
 
-#: ../terminal/terminal-window.c:234
+#: ../terminal/terminal-window.c:233
 msgid "_View"
 msgstr "_Προβολή"
 
-#: ../terminal/terminal-window.c:235
+#: ../terminal/terminal-window.c:234
 msgid "_Terminal"
 msgstr "_Τερματικό"
 
-#: ../terminal/terminal-window.c:236
+#: ../terminal/terminal-window.c:235
 msgid "_Set Title..."
 msgstr "_Ορισμός τίτλου..."
 
-#: ../terminal/terminal-window.c:236
+#: ../terminal/terminal-window.c:235
 msgid "Set a custom title for the current tab"
 msgstr "Εισάγετε τον τίτλο για την τρέχουσα καρτέλα"
 
-#: ../terminal/terminal-window.c:237
+#: ../terminal/terminal-window.c:236
 msgid "_Reset"
 msgstr "Επανα_φορά"
 
-#: ../terminal/terminal-window.c:238
+#: ../terminal/terminal-window.c:237
 msgid "Reset and C_lear"
 msgstr "Επαναφορά και Καθαρι_σμός"
 
-#: ../terminal/terminal-window.c:238
-#, fuzzy
+#: ../terminal/terminal-window.c:237
 msgid "Reset and clear"
-msgstr "Αρχικοποίηση και Καθαρισμός"
+msgstr "Εκκαθάριση και επαναφορά"
 
-#: ../terminal/terminal-window.c:239
+#: ../terminal/terminal-window.c:238
 msgid "_Go"
 msgstr "_Μετάβαση"
 
-#: ../terminal/terminal-window.c:240
+#: ../terminal/terminal-window.c:239
 msgid "_Previous Tab"
 msgstr "_Προηγούμενη καρτέλα"
 
-#: ../terminal/terminal-window.c:240
+#: ../terminal/terminal-window.c:239
 msgid "Switch to previous tab"
 msgstr "Μετάβαση στην προηγούμενη καρτέλα"
 
-#: ../terminal/terminal-window.c:241
+#: ../terminal/terminal-window.c:240
 msgid "_Next Tab"
 msgstr "Επόμε_νη καρτέλα"
 
-#: ../terminal/terminal-window.c:241
+#: ../terminal/terminal-window.c:240
 msgid "Switch to next tab"
 msgstr "Μετάβαση στην επόμενη καρτέλα"
 
-#: ../terminal/terminal-window.c:242
+#: ../terminal/terminal-window.c:241
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../terminal/terminal-window.c:243
+#: ../terminal/terminal-window.c:242
 msgid "_Contents"
 msgstr "_Περιεχόμενα"
 
-#: ../terminal/terminal-window.c:243
+#: ../terminal/terminal-window.c:242
 msgid "Display help contents"
 msgstr "Προβολή περιεχομένων βοήθειας"
 
-#: ../terminal/terminal-window.c:244
+#: ../terminal/terminal-window.c:243
 msgid "_Report a bug"
 msgstr "Αποστολή α_ναφοράς σφάλματος"
 
-#: ../terminal/terminal-window.c:244
+#: ../terminal/terminal-window.c:243
 msgid "Report a bug in Terminal"
 msgstr "Αναφορά σφαλμάτων στο τερματικό"
 
-#: ../terminal/terminal-window.c:245
+#: ../terminal/terminal-window.c:244
 msgid "_About"
 msgstr "_Περί"
 
-#: ../terminal/terminal-window.c:245
+#: ../terminal/terminal-window.c:244
 msgid "Display information about Terminal"
 msgstr "Εμφάνιση πληροφοριών σχετικά με το Terminal"
 
-#: ../terminal/terminal-window.c:246
+#: ../terminal/terminal-window.c:245
 msgid "_Input Methods"
 msgstr "Μέθοδοι ε_ισαγωγής"
 
-#: ../terminal/terminal-window.c:251
+#: ../terminal/terminal-window.c:250
 msgid "Show _Menubar"
 msgstr "Εμφάνιση _μπάρας μενού"
 
-#: ../terminal/terminal-window.c:251
+#: ../terminal/terminal-window.c:250
 msgid "Show/hide the menubar"
 msgstr "Εμφάνιση/απόκρυψη μπάρας μενού"
 
-#: ../terminal/terminal-window.c:252
+#: ../terminal/terminal-window.c:251
 msgid "Show _Toolbars"
 msgstr "Εμφάνιση _εργαλειοθηκών"
 
-#: ../terminal/terminal-window.c:252
+#: ../terminal/terminal-window.c:251
 msgid "Show/hide the toolbars"
 msgstr "Εμφάνιση/Απόκρυψη εργαλειοθηκών"
 
-#: ../terminal/terminal-window.c:253
+#: ../terminal/terminal-window.c:252
 msgid "Show Window _Borders"
 msgstr "Εμφάνιση Πε_ριγραμμάτων παραθύρου"
 
-#: ../terminal/terminal-window.c:253
+#: ../terminal/terminal-window.c:252
 msgid "Show/hide the window decorations"
 msgstr "Εμφάνιση/απόκρυψη των περιγραμμάτων παραθύρου"
 
-#: ../terminal/terminal-window.c:254
+#: ../terminal/terminal-window.c:253
 msgid "_Fullscreen"
 msgstr "_Πλήρης Οθόνη"
 
-#: ../terminal/terminal-window.c:254
+#: ../terminal/terminal-window.c:253
 msgid "Toggle fullscreen mode"
 msgstr "Εναλλαγή λειτουργίας πλήρους οθόνης"
 
-#: ../terminal/terminal-window.c:561
+#: ../terminal/terminal-window.c:560
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: ../terminal/terminal-window.c:572
+#: ../terminal/terminal-window.c:571
 msgid "Close all tabs"
 msgstr "Κλείσιμο όλων των καρτελών"
 
-#: ../terminal/terminal-window.c:591
+#: ../terminal/terminal-window.c:590
 #, c-format
 msgid ""
 "This window has %d tabs open. Closing\n"
@@ -728,27 +747,27 @@ msgstr ""
 "Αυτό το παράθυρο έχει %d ανοιχτές καρτέλες\n"
 "Εάν το κλείσετε, θα κλείσουν όλες οι καρτέλες."
 
-#: ../terminal/terminal-window.c:594
+#: ../terminal/terminal-window.c:593
 msgid "Close all tabs?"
 msgstr "Κλείσιμο όλων των καρτελών;"
 
-#: ../terminal/terminal-window.c:607
+#: ../terminal/terminal-window.c:606
 msgid "Do _not ask me again"
 msgstr "Να _μην ξαναγίνει η ερώτηση"
 
-#: ../terminal/terminal-window.c:1556
+#: ../terminal/terminal-window.c:1555
 msgid "Window Title|Set Title"
 msgstr "Ορισμός τίτλου"
 
-#: ../terminal/terminal-window.c:1569
+#: ../terminal/terminal-window.c:1568
 msgid "Title:"
 msgstr "Τίτλος:"
 
-#: ../terminal/terminal-window.c:1581
+#: ../terminal/terminal-window.c:1580
 msgid "Enter the title for the current terminal tab"
 msgstr "Εισάγετε τον τίτλο για την τρέχουσα καρτέλα"
 
-#: ../Terminal.desktop.in.h:2
+#: ../Terminal.desktop.in.in.h:2
 msgid "Terminal Emulator"
 msgstr "Προσομοίωση τερματικού"
 
@@ -1048,42 +1067,47 @@ msgid "Replaces initial title"
 msgstr "Αντικαθιστά τον αρχικό τίτλο"
 
 #: ../Terminal.glade.h:68
+#, fuzzy
+msgid "Rese_t double click options to defaults"
+msgstr "_Επαναφορά επιλογών συμβατότητας στις προεπιλεγμένες"
+
+#: ../Terminal.glade.h:69
 msgid "Reset tab activity _indicator after"
 msgstr "Επαναφορά της ένδειξης δραστηριότητας καρτέλας έπειτα από"
 
-#: ../Terminal.glade.h:69
+#: ../Terminal.glade.h:70
 msgid "Scaled"
 msgstr "Σε κλίμακα"
 
-#: ../Terminal.glade.h:70
+#: ../Terminal.glade.h:71
 msgid "Scr_ollbar is:"
 msgstr "Η μπάρα κ_ύλισης είναι:"
 
-#: ../Terminal.glade.h:71
+#: ../Terminal.glade.h:72
 msgid "Scroll on _keystroke"
 msgstr "Κύλιση στο _πάτημα πλήκτρου"
 
-#: ../Terminal.glade.h:72
+#: ../Terminal.glade.h:73
 msgid "Scroll on ou_tput"
 msgstr "Κύλιση στην έξοδο των εντολών"
 
-#: ../Terminal.glade.h:73
+#: ../Terminal.glade.h:74
 msgid "Scroll single _line using Shift-Up/-Down keys"
 msgstr "Κύλιση ανά μία γραμμή χρησιμοποιώντας τα shift-επάνω/κάτω πλήκτρα"
 
-#: ../Terminal.glade.h:74
+#: ../Terminal.glade.h:75
 msgid "Scroll_back:"
 msgstr "Κύλιση προς τα _πίσω:"
 
-#: ../Terminal.glade.h:75
+#: ../Terminal.glade.h:76
 msgid "Scrolling"
 msgstr "Κύλιση"
 
-#: ../Terminal.glade.h:76
+#: ../Terminal.glade.h:77
 msgid "Select Background Image File"
 msgstr "Επιλέξτε το αρχείο εικόνας του παρασκηνίου"
 
-#: ../Terminal.glade.h:77
+#: ../Terminal.glade.h:78
 msgid ""
 "Select this option to force Terminal to run your shell as a login shell when "
 "you open new terminals. See the documentation of your shell for details "
@@ -1095,45 +1119,45 @@ msgstr ""
 "του κελύφους σας για τη διαφορά μεταξύ της εκτέλεσης του ως τυπικό κέλυφος "
 "και ως κελύφους εισόδου."
 
-#: ../Terminal.glade.h:78
+#: ../Terminal.glade.h:79
 msgid "Shortcut Keys"
 msgstr "Πλήκτρα συντομεύσεων"
 
-#: ../Terminal.glade.h:79
+#: ../Terminal.glade.h:80
 msgid ""
 "Specifies the number of lines that you can scroll back using the scrollbar."
 msgstr ""
 "Καθορίζει τις γραμμές που μπορείτε να ανατρέξετε πίσω με τη μπάρα κύλισης."
 
-#: ../Terminal.glade.h:80
+#: ../Terminal.glade.h:81
 msgid "St_yle:"
 msgstr "Στ_υλ:"
 
-#: ../Terminal.glade.h:81
+#: ../Terminal.glade.h:82
 msgid "Stretched"
 msgstr "Τεντωμένο"
 
-#: ../Terminal.glade.h:82
+#: ../Terminal.glade.h:83
 msgid "Tab Activity Indicator"
 msgstr "Ένδειξη δραστηριότητας καρτελών"
 
-#: ../Terminal.glade.h:83
+#: ../Terminal.glade.h:84
 msgid "Tab activit_y color:"
 msgstr "Χρώμα δραστηριότητας καρ_τέλας:"
 
-#: ../Terminal.glade.h:84
+#: ../Terminal.glade.h:85
 msgid "Terminal Preferences"
 msgstr "Προτιμήσεις τερματικού"
 
-#: ../Terminal.glade.h:85
+#: ../Terminal.glade.h:86
 msgid "Terminal applications have this color palette available to them:"
 msgstr "Οι εφαρμογές τερματικού έχουν αυτή την παλέτα χρωμάτων διαθέσιμη:"
 
-#: ../Terminal.glade.h:86
+#: ../Terminal.glade.h:87
 msgid "Text Selection"
 msgstr "Επιλογή κειμένου"
 
-#: ../Terminal.glade.h:87
+#: ../Terminal.glade.h:88
 msgid ""
 "These options may cause some applications to behave\n"
 "incorrectly. They are only here to allow you to work around\n"
@@ -1145,7 +1169,7 @@ msgstr ""
 "εργαστείτε με συγκεκριμένες εφαρμογές και λειτουργικά συστήματα\n"
 "που αναμένουν διαφορετική συμπεριφορά τερματικού."
 
-#: ../Terminal.glade.h:91
+#: ../Terminal.glade.h:92
 msgid ""
 "This option controls whether the terminal will scroll down automatically "
 "whenever new output is generated by the commands running inside the terminal."
@@ -1154,7 +1178,7 @@ msgstr ""
 "αυτόματα όταν παράγεται νέο κείμενο από τις εντολές που τρέχουν μέσα στο "
 "τερματικό."
 
-#: ../Terminal.glade.h:92
+#: ../Terminal.glade.h:93
 msgid ""
 "This specifies the value the $TERM environment variable is set to, when a "
 "new terminal tab or terminal window is opened. The default should be ok for "
@@ -1166,579 +1190,96 @@ msgstr ""
 "θα πρέπει να είναι εντάξει στα περισσότερα συστήματα. Εάν έχετε προβλήματα "
 "με μερικές εφαρμογές, χρησιμοποιήστε το xterm-color εδώ."
 
-#: ../Terminal.glade.h:93
+#: ../Terminal.glade.h:94
 msgid "Tiled"
 msgstr "Πλακίδιο"
 
-#: ../Terminal.glade.h:94
+#: ../Terminal.glade.h:95
 msgid "Title"
 msgstr "Τίτλος"
 
-#: ../Terminal.glade.h:95
+#: ../Terminal.glade.h:96
 msgid "Transpare_ncy:"
 msgstr "Διαφά_νεια:"
 
-#: ../Terminal.glade.h:96
+#: ../Terminal.glade.h:97
 msgid "Transparent background"
 msgstr "Διαφανές παρασκήνιο"
 
-#: ../Terminal.glade.h:97
+#: ../Terminal.glade.h:98
 msgid "Use _default color"
 msgstr "Χρήση _προκαθορισμένου χρώματος"
 
-#: ../Terminal.glade.h:98
+#: ../Terminal.glade.h:99
 msgid "Use a custom text selection background color"
 msgstr ""
 "Χρήση του προσαρμοσμένου χρώματος παρασκηνίου για το επιλεγμένο κείμενο"
 
-#: ../Terminal.glade.h:99
+#: ../Terminal.glade.h:100
 msgid "Use c_ustom color:"
 msgstr "Χρήση πρ_οσαρμοσμένου χρώματος:"
 
-#: ../Terminal.glade.h:100
+#: ../Terminal.glade.h:101
 msgid "Use the default text selection background color"
 msgstr ""
 "Χρήση του προκαθορισμένου χρώματος παρασκηνίου για το επιλεγμένο κείμενο"
 
-#: ../Terminal.glade.h:101
+#: ../Terminal.glade.h:102
 msgid "_Appearance"
 msgstr "_Εμφάνιση"
 
-#: ../Terminal.glade.h:102
+#: ../Terminal.glade.h:103
 msgid "_Background color:"
 msgstr "Χρώμα _παρασκηνίου:"
 
-#: ../Terminal.glade.h:103
+#: ../Terminal.glade.h:104
 msgid "_Backspace key generates:"
 msgstr "_Το πλήκτρο Backspace προκαλεί:"
 
-#: ../Terminal.glade.h:104
+#: ../Terminal.glade.h:105
 msgid "_Colors"
 msgstr "_Χρώματα"
 
-#: ../Terminal.glade.h:105
+#: ../Terminal.glade.h:106
 msgid "_Delete key generates:"
 msgstr "_Το πλήκτρο Delete προκαλεί:"
 
-#: ../Terminal.glade.h:106
+#: ../Terminal.glade.h:107
 msgid "_Dynamically-set title:"
 msgstr "_Δυναμικός καθορισμός τίτλου:"
 
-#: ../Terminal.glade.h:107
+#: ../Terminal.glade.h:108
 msgid "_File:"
 msgstr "_Αρχείο:"
 
-#: ../Terminal.glade.h:108
+#: ../Terminal.glade.h:109
 msgid "_General"
 msgstr "_Γενικές"
 
-#: ../Terminal.glade.h:109
+#: ../Terminal.glade.h:110
 msgid "_Initial title:"
 msgstr "Αρχικός _τίτλος:"
 
-#: ../Terminal.glade.h:110
+#: ../Terminal.glade.h:111
 msgid "_Reset compatibility options to defaults"
 msgstr "_Επαναφορά επιλογών συμβατότητας στις προεπιλεγμένες"
 
-#: ../Terminal.glade.h:111
+#: ../Terminal.glade.h:112
 msgid "_Run command as login shell"
 msgstr "_Εκτέλεση εντολής ως κέλυφος εισόδου"
 
-#: ../Terminal.glade.h:112
+#: ../Terminal.glade.h:113
 msgid "_Shortcuts"
 msgstr "_Συντομεύσεις"
 
-#: ../Terminal.glade.h:113
+#: ../Terminal.glade.h:114
 msgid "_Text color:"
 msgstr "Χρώμα _κειμένου:"
 
-#: ../Terminal.glade.h:114
+#: ../Terminal.glade.h:115
 msgid "_Update utmp/wtmp records when command is launched"
 msgstr "Εν_ημέρωση των εγγραφών utmp/wtmp όταν εκτελεστεί η εντολή "
 
-#: ../Terminal.glade.h:115
+#: ../Terminal.glade.h:116
 msgid "seconds"
 msgstr "δευτερόλεπτα"
-
-#~ msgid ""
-#~ "  -h, --help                          Print this help message and exit"
-#~ msgstr ""
-#~ "  -h, --help                          Εμφανίζει αυτό το κείμενο βοήθειας"
-
-#~ msgid ""
-#~ "  -V, --version                       Print version information and exit"
-#~ msgstr ""
-#~ "  -V, --version                       Εμφανίζει τις πληροφορίες της "
-#~ "έκδοσης και τερματίζει"
-
-#~ msgid ""
-#~ "  --disable-server                    Do not register with the D-BUS\n"
-#~ "                                      session message bus"
-#~ msgstr ""
-#~ "  --disable-server                    Όχι σύνδεση με το δίαυλο μηνυμάτων\n"
-#~ "                                      συστήματος D-BUS"
-
-#~ msgid "  --default-display=DISPLAY           default X display to use"
-#~ msgstr ""
-#~ "  --default-display=DISPLAY           προκαθορισμένο X display προς χρήση"
-
-#~ msgid ""
-#~ "  --default-working-directory=DIRNAME Set the default terminal's working\n"
-#~ "                                      directory"
-#~ msgstr ""
-#~ "  --default-working-directory=DIRNAME Ορισμός του εξ ορισμού καταλόγου\n"
-#~ "                                      εργασίας του τερματικού."
-
-#~ msgid ""
-#~ "  --tab                               Open a new tab in the last-"
-#~ "specified\n"
-#~ "                                      window; more than one of these\n"
-#~ "                                      options can be provided"
-#~ msgstr ""
-#~ "  --tab                               Ανοίγει μια νέα καρτέλα στο "
-#~ "προσδιορισμένο\n"
-#~ "                                      παράθυρο· μπορεί να δοθεί παραπάνω "
-#~ "από μια\n"
-#~ "                                      φορές."
-
-#~ msgid ""
-#~ "  --window                            Open a new window containing one "
-#~ "tab;\n"
-#~ "                                      more than one of these options can "
-#~ "be\n"
-#~ "                                      provided"
-#~ msgstr ""
-#~ "  --window                            Ανοίγει ένα νέο παράθυρο με μια "
-#~ "καρτέλα.\n"
-#~ "                                      Μπορεί να δοθεί παραπάνω από μια "
-#~ "φορές."
-
-#~ msgid ""
-#~ "  -x, --execute                       Execute the remainder of the "
-#~ "command\n"
-#~ "                                      line inside the terminal"
-#~ msgstr ""
-#~ "  -x, --execute                       Εκτέλεση του υπολοίπου της εντολής\n"
-#~ "                                      μέσα στο τερματικό."
-
-#~ msgid ""
-#~ "  -e, --command=STRING                Execute the argument to this "
-#~ "option\n"
-#~ "                                      inside the terminal"
-#~ msgstr ""
-#~ "  -e, --command=ΕΝΤΟΛΗ                Εκτελεί το όρισμα αυτής της "
-#~ "επιλογής\n"
-#~ "                                      μέσα στο τερματικό"
-
-#~ msgid ""
-#~ "  --working-directory=DIRNAME         Set the terminal's working directory"
-#~ msgstr ""
-#~ "  --working-directory=ΚΑΤΑΛΟΓΟΣ    Ορισμός του καταλόγου εργασίας του "
-#~ "τερματικού."
-
-#~ msgid "  -T, --title=TITLE                   Set the terminal's title"
-#~ msgstr ""
-#~ "  -T, --title=TITLE                   Ορίζει τον τίτλο του τερματικού"
-
-#~ msgid ""
-#~ "  -H, --hold                          Do not immediately destroy the tab\n"
-#~ "                                      when the child command exits"
-#~ msgstr ""
-#~ "  -H, --hold                          Να μην κλείσει η καρτέλλα αμέσως "
-#~ "μετά\n"
-#~ "                                      την έξοδο της θυγατρικής διεργασίας"
-
-#~ msgid ""
-#~ "  --display=DISPLAY                   X display to use for the last-\n"
-#~ "                                      specified window"
-#~ msgstr ""
-#~ "  --display=DISPLAY                   Ποιο X display να χρησιμοποιηθεί "
-#~ "για\n"
-#~ "                                      το προσδιορισμένο παράθυρο"
-
-#~ msgid ""
-#~ "  --geometry=GEOMETRY                 X geometry specification (see \"X"
-#~ "\"\n"
-#~ "                                      man page), can be specified once "
-#~ "per\n"
-#~ "                                      window to be opened"
-#~ msgstr ""
-#~ "  --geometry=ΓΕΩΜΕΤΡΙΑ                Ο καθορισμός γεωμετρίας Χ (βλ. "
-#~ "σελίδα\n"
-#~ "                                      τεκμηρίωσης man \"X\"), μπορεί να "
-#~ "ορισθεί\n"
-#~ "                                      μια φορά ανά παράθυρο που ανοίγεται."
-
-#~ msgid ""
-#~ "  --role=ROLE                         Set the role for the last-"
-#~ "specified\n"
-#~ "                                      window; applies to only one "
-#~ "window;\n"
-#~ "                                      can be specified once for each "
-#~ "window\n"
-#~ "                                      you create from the command line"
-#~ msgstr ""
-#~ "  --role=ΡΟΛΟΣ                        Ορισμός του ρόλου για το τελευταίο\n"
-#~ "                                      καθορισμένο παράθυρο, εφαρμόζεται "
-#~ "μόνο σε\n"
-#~ "                                      ένα παράθυρο και μπορεί να "
-#~ "καθοριστεί μια\n"
-#~ "                                      φορά για κάθε παράθυρο που "
-#~ "δημιουργείται\n"
-#~ "                                      από τη γραμμή εντολών."
-
-#~ msgid ""
-#~ "  --startup-id=STRING                 ID for the startup notification\n"
-#~ "                                      protocol"
-#~ msgstr ""
-#~ "  --startup-id=ΑΝΑΓΩΡΙΣΤΙΚΟ           Αναγνωριστικό για το πρωτόκολλο\n"
-#~ "                                      ειδοποίησης εκκίνησης"
-
-#~ msgid ""
-#~ "  -I, --icon=ICON                     Set the terminal's icon as an icon\n"
-#~ "                                      name or filename"
-#~ msgstr ""
-#~ "  -I, --icon=ΕΙΚΟΝΙΔΙΟ                     Ορισμός του εικονιδίου του "
-#~ "τερματικού\n"
-#~ "                                                        ως εικονίδιο "
-#~ "ονόματος ή ονόματος αρχείου"
-
-#~ msgid ""
-#~ "  --fullscreen                        Set the last-specified window into\n"
-#~ "                                      fullscreen mode; applies to only "
-#~ "one\n"
-#~ "                                      window; can be specified once for\n"
-#~ "                                      each window you create from the\n"
-#~ "                                      command line"
-#~ msgstr ""
-#~ "  --fullscreen                        Ορισμός του τελευταίου καθορισμένου "
-#~ "παραθύρου σε\n"
-#~ "                                       μεγιστοποίηση, εφαρμόζεται μόνο σε "
-#~ "ένα παράθυρο\n"
-#~ "                                       και μπορεί να καθοριστεί μία φορά "
-#~ "για κάθε νέο παράθυρο\n"
-#~ "                                       που δημιουργείται από την γραμμή "
-#~ "εντολών."
-
-#~ msgid ""
-#~ "  --maximize                          Maximize the last-specified "
-#~ "window;\n"
-#~ "                                      applies to only one window; can be\n"
-#~ "                                      specified once for each window you\n"
-#~ "                                      create from the command line"
-#~ msgstr ""
-#~ "  --maximize                          Μεγιστοποιεί το τελευταίο "
-#~ "καθορισμένο παράθυρο\n"
-#~ "                                      εφαρμόζεται μόνο σε ένα νέο "
-#~ "παράθυρο και μπορεί να\n"
-#~ "                                      καθοριστεί μία φορά για κάθε "
-#~ "παράθυρο που δημιουργείται\n"
-#~ "                                      από την γραμμή εντολών"
-
-#~ msgid ""
-#~ "  --show-menubar                      Turn on the menubar for the last-\n"
-#~ "                                      specified window; applies to only "
-#~ "one\n"
-#~ "                                      window; can be specified once for\n"
-#~ "                                      each window you create from the\n"
-#~ "                                      command line"
-#~ msgstr ""
-#~ "  --show-menubar                      Ενεργοποιεί τη μπάρα μενού για το\n"
-#~ "                                      προσδιορισμένο παράθυρο· ενεργεί "
-#~ "μόνο\n"
-#~ "                                      σε ένα παράθυρο· μπορεί να "
-#~ "προσδιοριστεί\n"
-#~ "                                      για κάθε παράθυρο που δημιουργείτε\n"
-#~ "                                      από τη γραμμή εντολών"
-
-#~ msgid ""
-#~ "  --hide-menubar                      Turn off the menubar for the last-\n"
-#~ "                                      specified window; applies to only "
-#~ "one\n"
-#~ "                                      window; can be specified once for\n"
-#~ "                                      each window you create from the\n"
-#~ "                                      command line"
-#~ msgstr ""
-#~ "  --hide-menubar                      Αποκρύπτει τη μπάρα μενού για το\n"
-#~ "                                      προσδιορισμένο παράθυρο· ενεργεί "
-#~ "μόνο\n"
-#~ "                                      σε ένα παράθυρο· μπορεί να "
-#~ "προσδιοριστεί\n"
-#~ "                                      για κάθε παράθυρο που δημιουργείτε\n"
-#~ "                                      από τη γραμμή εντολών"
-
-#~ msgid ""
-#~ "  --show-borders                      Turn on the window decorations for\n"
-#~ "                                      the last-specified window; applies\n"
-#~ "                                      to only one window; can be "
-#~ "specified\n"
-#~ "                                      once for each window you create "
-#~ "from\n"
-#~ "                                      the command line"
-#~ msgstr ""
-#~ "  --show-borders                      Ενεργοποιεί τα περιγράμματα για το\n"
-#~ "                                      προσδιορισμένο παράθυρο· ενεργεί "
-#~ "μόνο\n"
-#~ "                                      σε ένα παράθυρο· μπορεί να "
-#~ "προσδιοριστεί\n"
-#~ "                                      για κάθε παράθυρο που δημιουργείτε\n"
-#~ "                                      από τη γραμμή εντολών"
-
-#~ msgid ""
-#~ "  --hide-borders                      Turn off the window decorations "
-#~ "for\n"
-#~ "                                      the last-specified window; applies\n"
-#~ "                                      to only one window; can be "
-#~ "specified\n"
-#~ "                                      once for each window you create "
-#~ "from\n"
-#~ "                                      the command line"
-#~ msgstr ""
-#~ "  --hide-borders                      Αποκρύπτει τα περιγράμματα για το\n"
-#~ "                                      προσδιορισμένο παράθυρο· ενεργεί "
-#~ "μόνο\n"
-#~ "                                      σε ένα παράθυρο· μπορεί να "
-#~ "προσδιοριστεί\n"
-#~ "                                      για κάθε παράθυρο που δημιουργείτε\n"
-#~ "                                      από τη γραμμή εντολών"
-
-#~ msgid ""
-#~ "  --show-toolbars                     Turn on the toolbars for the last-\n"
-#~ "                                      specified window; applies to only "
-#~ "one\n"
-#~ "                                      window; can be specified once for\n"
-#~ "                                      each window you create from the\n"
-#~ "                                      command line"
-#~ msgstr ""
-#~ "  --show-toolbars                     Εμφανίζει τις γραμμές εργαλείων για "
-#~ "το\n"
-#~ "                                      προσδιορισμένο παράθυρο· ενεργεί "
-#~ "μόνο\n"
-#~ "                                      σε ένα παράθυρο· μπορεί να "
-#~ "προσδιοριστεί\n"
-#~ "                                      για κάθε παράθυρο που δημιουργείτε\n"
-#~ "                                      από τη γραμμή εντολών"
-
-#~ msgid ""
-#~ "  --hide-toolbars                     Turn off the toolbars for the "
-#~ "last-\n"
-#~ "                                      specified window; applies to only "
-#~ "one\n"
-#~ "                                      window; can be specified once for\n"
-#~ "                                      each window you create from the\n"
-#~ "                                      command line"
-#~ msgstr ""
-#~ "  --hide-toolbars                     Αποκρύπτει τις γραμμές εργαλείων "
-#~ "για το\n"
-#~ "                                      προσδιορισμένο παράθυρο· ενεργεί "
-#~ "μόνο\n"
-#~ "                                      σε ένα παράθυρο· μπορεί να "
-#~ "προσδιοριστεί\n"
-#~ "                                      για κάθε παράθυρο που δημιουργείτε\n"
-#~ "                                      από τη γραμμή εντολών"
-
-#~ msgid "Unable to launch terminal: %s\n"
-#~ msgstr "Δεν ήταν δυνατή η εκκίνηση του τερματικού: %s\n"
-
-#~ msgid ""
-#~ "Option \"--sm-client-id\" requires specifying the session id as its "
-#~ "parameter"
-#~ msgstr ""
-#~ "Η επιλογή \"--sm-client-id\" απαιτεί τον προσδιορισμό του αναγνωριστικού "
-#~ "συνεδρίας ως παράμετρο"
-
-#~ msgid "<b>Title:</b>"
-#~ msgstr "<b>Τίτλος:</b>"
-
-#~ msgid "Usage: Terminal [OPTION...]"
-#~ msgstr "Χρήση: Terminal [ΟΡΙΣΜΑ...]"
-
-#~ msgid "<b>Title</b>"
-#~ msgstr "<b>Τίτλος</b>"
-
-#~ msgid ""
-#~ "The command running inside the terminal may dynamically set a new title."
-#~ msgstr ""
-#~ "Η εντολή που εκτελείται μέσα στο τερματικό μπορεί να ορίσει δυναμικά ένα "
-#~ "νέο τίτλο."
-
-#~ msgid "<b>Font</b>"
-#~ msgstr "<b>Γραμματοσειρά</b>"
-
-#~ msgid "<b>Background</b>"
-#~ msgstr "<b>Παρασκήνιο</b>"
-
-#~ msgid "Shade transparent or image background:"
-#~ msgstr "Σκίαση διαφάνειας ή εικόνας παρασκηνίου:"
-
-#~ msgid "<small><i>None</i></small>"
-#~ msgstr "<small><i>Κανένα</i></small>"
-
-#~ msgid "<small><i>Maximum</i></small>"
-#~ msgstr "<small><i>Μέγιστο</i></small>"
-
-#~ msgid "<b>Foreground and Background</b>"
-#~ msgstr "<b>Προσκήνιο και Παρασκήνιο</b>"
-
-#~ msgid "<b>Tab activity</b>"
-#~ msgstr "<b>Δραστηριότητα καρτελών</b>"
-
-#~ msgid "<b>Shortcut keys</b>"
-#~ msgstr "<b>Πλήκτρα συντόμευσης</b>"
-
-#~ msgid "Web Browser"
-#~ msgstr "Περιηγητής ιστοσελίδων"
-
-#~ msgid "Mail Reader"
-#~ msgstr "Εφαρμογή αλληλογραφίας"
-
-#~ msgid ""
-#~ "Choose your preferred Web Browser. The preferred\n"
-#~ "Web Browser opens when you right-click on a URL\n"
-#~ "and select Open Link from the context menu."
-#~ msgstr ""
-#~ "Επιλέξτε τον προτιμώμενο περιηγητή Ιστού. Ο προτιμώμενος\n"
-#~ "Περιηγητής ιστού ανοίγει όταν επιλέξετε Άνοιγμα δεσμού με\n"
-#~ "δεξί κλικ σε ένα URL."
-
-#~ msgid ""
-#~ "Choose your preferred Mail Reader. The preferred\n"
-#~ "Mail Reader opens when you right-click on an email\n"
-#~ "address and select Compose Email from the context\n"
-#~ "menu."
-#~ msgstr ""
-#~ "Επιλέξτε τον προτιμώμενο αναγνώστη αλληλογραφίας.\n"
-#~ "Ο προτιμώμενος αναγνώστης αλληλογραφίας ανοίγει\n"
-#~ "όταν επιλέξετε Σύνθεση μηνύματος με δεξί κλικ σε μια\n"
-#~ "διεύθυνση ηλεκτρονικής αλληλογραφίας."
-
-#~ msgid ""
-#~ "Click here to change the selected application or to disable this feature."
-#~ msgstr ""
-#~ "Πατήστε εδώ για να αλλάξετε την επιλεγμένη εφαρμογή ή να απενεργοποιήσετε "
-#~ "αυτή τη λειτουργία"
-
-#~ msgid "Select application"
-#~ msgstr "Επιλογή μιας εφαρμογής"
-
-#~ msgid "Choose a custom Web Browser"
-#~ msgstr "Επιλογή προσαρμοσμένου περιηγητή"
-
-#~ msgid "Choose a custom Mail Reader"
-#~ msgstr "Χρήση προσαρμοσμένου αναγνώστη αλληλογραφίας"
-
-#~ msgid ""
-#~ "Specify the application you want to use as\n"
-#~ "Web Browser in Terminal:"
-#~ msgstr ""
-#~ "Προσδιορίστε την εφαρμογή που θα χρησιμοποιείτε\n"
-#~ "ως περιηγητή ιστού στο τερματικό:"
-
-#~ msgid ""
-#~ "Specify the application you want to use as\n"
-#~ "Mail Reader in Terminal:"
-#~ msgstr ""
-#~ "Προσδιορίστε την εφαρμογή που θα χρησιμοποιείτε\n"
-#~ "ως αναγνώστη αλληλογραφίας στο τερματικό:"
-
-#~ msgid "_Browse..."
-#~ msgstr "_Περιήγηση..."
-
-#~ msgid "Disable this feature"
-#~ msgstr "Απενεργοποίηση αυτής της λειτουργίας"
-
-#~ msgid "Other..."
-#~ msgstr "Άλλο..."
-
-#~ msgid "No application selected"
-#~ msgstr "Δεν επιλέχθηκαν εφαρμογές"
-
-#~ msgid "Preferred Applications"
-#~ msgstr "Προτιμώμενες εφαρμογές"
-
-#~ msgid "Applications"
-#~ msgstr "Εφαρμογές"
-
-#~ msgid "_Applications..."
-#~ msgstr "_Εφαρμογές..."
-
-#~ msgid "Customize your preferred applications"
-#~ msgstr "Προσαρμογή των προτιμώμενων εφαρμογών"
-
-#~ msgid ""
-#~ "You did not choose your preferred Web\n"
-#~ "Browser yet. Do you want to setup your\n"
-#~ "preferred applications now?"
-#~ msgstr ""
-#~ "Δεν έχετε επιλέξει τον προτιμώμενο σας περιηγητή\n"
-#~ "ιστού ακόμα. Θέλετε να ορίσετε τις προτιμώμενες σας\n"
-#~ "εφαρμογές τώρα;"
-
-#~ msgid ""
-#~ "You did not choose your preferred Mail\n"
-#~ "Reader yet. Do you want to setup your\n"
-#~ "preferred applications now?"
-#~ msgstr ""
-#~ "Δεν έχετε επιλέξει τον προτιμώμενο σας αναγνώστη\n"
-#~ "αλληλογραφίας ακόμα. Θέλετε να ορίσετε τις\n"
-#~ "προτιμώμενες σας εφαρμογές τώρα;"
-
-#~ msgid "Balsa"
-#~ msgstr "Balsa"
-
-#~ msgid "Epiphany Web Browser"
-#~ msgstr "Περιηγητής διαδικτύου Epiphany"
-
-#~ msgid "Novell Evolution"
-#~ msgstr "Novell Evolution"
-
-#~ msgid "Default Web Browser (Xfce)"
-#~ msgstr "Εξορισμού περιηγητής διαδικτύου (Xfce)"
-
-#~ msgid "Default Mail Reader (Xfce)"
-#~ msgstr "Εξορισμού αναγνώστης αλληλογραφίας (Xfce)"
-
-#~ msgid "Mozilla Firefox"
-#~ msgstr "Mozilla Firefox"
-
-#~ msgid "Galeon Web Browser"
-#~ msgstr "Περιηγητής διαδικτύου Galeon"
-
-#~ msgid "KMail"
-#~ msgstr "KMail"
-
-#~ msgid "Konqueror"
-#~ msgstr "Konqueror"
-
-#~ msgid "Lynx"
-#~ msgstr "Περιηγητής κειμένου Lynx"
-
-#~ msgid "Mozilla Browser"
-#~ msgstr "Περιηγητής διαδικτύου Mozilla"
-
-#~ msgid "Mozilla Mail"
-#~ msgstr "Αναγνώστης αλληλογραφίας Mozilla"
-
-#~ msgid "Mutt"
-#~ msgstr "Mutt"
-
-#~ msgid "Opera Browser"
-#~ msgstr "Περιηγητής ιστοσελίδων Opera"
-
-#~ msgid "Opera Mail"
-#~ msgstr "Αναγνώστης αλληλογραφίας Opera"
-
-#~ msgid "Debian Sensible Browser"
-#~ msgstr "Περιηγητής Sensible του Debian"
-
-#~ msgid "Sylpheed Claws"
-#~ msgstr "Sylpheed Claws"
-
-#~ msgid "Mozilla Thunderbird"
-#~ msgstr "Mozilla Thunderbird"
-
-#~ msgid "Custom title"
-#~ msgstr "Προσαρμοσμένος τίτλος"
-
-#~ msgid "Tab title"
-#~ msgstr "Τίτλος καρτέλας"

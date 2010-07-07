@@ -1,73 +1,67 @@
-# translation of ar.po to Arabic
-# Khaled Hosny <khaledhosny@eglug.org>, 2007.
+# Croatian translations for Terminal package.
+# Copyright (C) 2010  os-cillation e.K.
+# This file is distributed under the same license as the Terminal package.
+#  Ivica Kolić<ikoli@yahoo.com>, 2010.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: ar\n"
+"Project-Id-Version: Terminal 0.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-12 19:57+0200\n"
-"PO-Revision-Date: 2008-07-18 21:41+0200\n"
-"Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"POT-Creation-Date: 2010-06-11 16:00+0000\n"
+"PO-Revision-Date: 2010-06-11 23:18+0200\n"
+"Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
+"Language-Team: Croatian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Arabic\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && "
-"n<=10 ? 2 : 3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../terminal/main.c:52
 msgid "Usage:"
-msgstr ""
+msgstr "Upotreba"
 
 #: ../terminal/main.c:52
 msgid "OPTION"
-msgstr ""
+msgstr "OPCIJA"
 
 #: ../terminal/main.c:57
-#, fuzzy
 msgid "General Options"
-msgstr "عام"
+msgstr "Osnovne opcije"
 
 #. parameter of --default-display
 #. parameter of --display
 #: ../terminal/main.c:59 ../terminal/main.c:85
-#, fuzzy
 msgid "display"
-msgstr "لا يُعرض"
+msgstr "prikaz"
 
 #. parameter of --default-working-directory
 #. parameter of --working-directory
 #: ../terminal/main.c:61 ../terminal/main.c:76
 msgid "directory"
-msgstr ""
+msgstr "direktorij"
 
 #: ../terminal/main.c:65
 msgid "Window or Tab Separators"
-msgstr ""
+msgstr "Razdjelnici prozora ili kartica"
 
 #: ../terminal/main.c:70
-#, fuzzy
 msgid "Tab Options"
-msgstr "موقع اللسان"
+msgstr "Opcije kartice"
 
 #. parameter of --command
 #: ../terminal/main.c:72
-#, fuzzy
 msgid "command"
-msgstr "<b>أمر</b>"
+msgstr "naredba"
 
 #. parameter of --title
 #: ../terminal/main.c:74
-#, fuzzy
 msgid "title"
-msgstr "العنوان"
+msgstr "naslov"
 
 #: ../terminal/main.c:83
-#, fuzzy
 msgid "Window Options"
-msgstr "خيار مجهول \"%s\""
+msgstr "Opcije prozora"
 
 #. parameter of --geometry
 #: ../terminal/main.c:87
@@ -81,25 +75,23 @@ msgstr ""
 
 #. parameter of --startup-id
 #: ../terminal/main.c:91
-#, fuzzy
 msgid "string"
-msgstr "تحذير"
+msgstr ""
 
 #. parameter of --icon
 #: ../terminal/main.c:93
-#, fuzzy
 msgid "icon"
-msgstr "إجراء"
+msgstr "ikona"
 
 #: ../terminal/main.c:95
 #, c-format
 msgid "See the %s man page for full explanation of the options above."
-msgstr ""
+msgstr "Vidi  %s man stranicu za puno objašnjenje gornjih opcija."
 
 #: ../terminal/main.c:126 ../terminal/terminal-preferences.c:1262
 #: ../terminal/terminal-shortcut-editor.c:119 ../Terminal.desktop.in.in.h:1
 msgid "Terminal"
-msgstr "طرفية"
+msgstr "Terminal"
 
 #: ../terminal/main.c:144
 #, c-format
@@ -117,55 +109,59 @@ msgid ""
 msgstr ""
 "%s %s (Xfce %s)\n"
 "\n"
-"حقوق النسخ (c) %s\n"
-"        os-cillation e.K. جميع الحقوق محفوظة.\n"
-"كتبه Benedikt Meurer <benny@xfce.org>.\n"
-"بُنِي مع Gtk+-%d.%d.%d، و يعمل مع Gtk+-%d.%d.%d. \n"
+"Copyright (c) %s\n"
+"        os-cillation e.K. Sva prava pridržana.\n"
 "\n"
-"فضلا أرسل تقارير العلل إلى <%s>.\n"
+"Napisao Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Built with Gtk+-%d.%d.%d, running with Gtk+-%d.%d.%d.\n"
+"\n"
+"Prijavite probleme <%s>.\n"
 
-#: ../terminal/main.c:250
+#: ../terminal/main.c:254
 #, c-format
 msgid "Unable to register terminal service: %s\n"
-msgstr "تعذّر تسجيل خدمة الطرفية: %s\n"
+msgstr "Ne mogu registrirati terminalni servis: %s\n"
 
 #: ../terminal/terminal-app.c:516
 #, c-format
 msgid "Invalid geometry string \"%s\"\n"
-msgstr "سلسلة هندسة غير سليمة \"%s\"\n"
+msgstr ""
 
-#: ../terminal/terminal-dbus.c:107
+#: ../terminal/terminal-dbus.c:113
 msgid "User id mismatch"
-msgstr "لم يتطابق معرِّف المستخدم"
+msgstr ""
 
-#: ../terminal/terminal-dbus.c:133
+#: ../terminal/terminal-dbus.c:119
+msgid "Display mismatch"
+msgstr ""
+
+#: ../terminal/terminal-dbus.c:145
 #, c-format
 msgid "D-BUS message bus disconnected, exiting...\n"
-msgstr "لقد انقطع اتصال رسالة D-BUS، جارِ الخروج...\n"
+msgstr ""
 
-#: ../terminal/terminal-dbus.c:195
+#: ../terminal/terminal-dbus.c:207
 #, c-format
 msgid "Unable to register object %s"
-msgstr "تعذذر تسجيل الكائن %s"
+msgstr "Ne mogu registrirati objekt %s"
 
 #: ../terminal/terminal-dialogs.c:95 ../Terminal-default-apps.xml.in.in.h:1
 msgid "Xfce Terminal Emulator"
-msgstr "محاكي طرفية X"
+msgstr ""
 
 #: ../terminal/terminal-dialogs.c:102
 msgid "translator-credits"
-msgstr ""
-"فريق عرب آيز للترجمة http://www.arabeyes.org :\n"
-"خالد حسني\t<khaledhosny@eglug.org>"
+msgstr "Ivica Kolić (zvacet) <ikoli@yahoo.com>"
 
 #: ../terminal/terminal-dialogs.c:105
 msgid "Visit Terminal website"
-msgstr ""
+msgstr "Posjetite website Terminala"
 
 #: ../terminal/terminal-dialogs.c:215
 #, c-format
 msgid "The %s user manual is not installed on your computer"
-msgstr ""
+msgstr "%s korisnički priručnik nije instaliran na vašem računalu"
 
 #: ../terminal/terminal-dialogs.c:218
 #, c-format
@@ -173,19 +169,21 @@ msgid ""
 "You can read the user manual online. This manual may however not exactly "
 "match your %s version."
 msgstr ""
+"Možete čitati korisnički priručnik online.Ovaj priručnik možda ne odgovara "
+"vašoj  %s verziji."
 
 #: ../terminal/terminal-dialogs.c:220
 msgid "User manual is missing"
-msgstr ""
+msgstr "Korisnički priručnik nedostaje"
 
 #: ../terminal/terminal-dialogs.c:222
 msgid "_Read Online"
-msgstr ""
+msgstr "_Čitaj online"
 
 #. display an error message to the user
 #: ../terminal/terminal-dialogs.c:302
 msgid "Failed to open the documentation browser"
-msgstr "تعذّر فتح متصفح الوثائق"
+msgstr "Neuspjelo otvaranje preglednika dokumentacije"
 
 #: ../terminal/terminal-options.c:210
 #, c-format
@@ -207,26 +205,25 @@ msgid ""
 "Option \"--execute/-x\" requires specifying the command to run on the rest "
 "of the command line"
 msgstr ""
-"يحتاج الخيار \"--execute/-x\" لتحديد الأمر الذي سيشغل على باقي سطر الأوامر"
 
 #: ../terminal/terminal-options.c:258
 #, c-format
 msgid ""
 "Option \"--command/-e\" requires specifying the command to run as its "
 "parameter"
-msgstr "يحتاج الخيار \"--execute/-x\" لتحديد الأمر الذي سيُشغل كمعامل له"
+msgstr ""
 
 #: ../terminal/terminal-options.c:275
 #, c-format
 msgid ""
 "Option \"--working-directory\" requires specifying the working directory as "
 "its parameter"
-msgstr "يحتاج الخيار \"--execute/-x\" لتحديد مجلّد العمل كمعامل له"
+msgstr ""
 
 #: ../terminal/terminal-options.c:290
 #, c-format
 msgid "Option \"--title/-T\" requires specifying the title as its parameter"
-msgstr "يحتاج الخيار \"--execute/-x\" لتحديد العنوان كمعامل له"
+msgstr ""
 
 #: ../terminal/terminal-options.c:309
 #, c-format
@@ -253,230 +250,228 @@ msgid ""
 msgstr ""
 
 #: ../terminal/terminal-options.c:369
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Option \"--icon/-I\" requires specifying an icon name or filename as its "
 "parameter"
-msgstr "يحتاج الخيار \"--execute/-x\" لتحديد الأمر الذي سيُشغل كمعامل له"
+msgstr ""
 
 #: ../terminal/terminal-options.c:423
 #, c-format
 msgid "Unknown option \"%s\""
-msgstr "خيار مجهول \"%s\""
+msgstr "Nepoznata opcija  \"%s\""
 
 #: ../terminal/terminal-preferences-dialog.c:227
 msgid "All Files"
-msgstr "كل الملفات"
+msgstr "Sve datoteke"
 
 #: ../terminal/terminal-preferences-dialog.c:233
 msgid "Image Files"
-msgstr "ملفات صور"
+msgstr "Datoteke slika"
 
 #: ../terminal/terminal-preferences.c:309
 msgid "Open Tab"
-msgstr "افتح لسان"
+msgstr "Otvori karticu"
 
 #: ../terminal/terminal-preferences.c:320
 msgid "Open Terminal"
-msgstr "افتح طرفيّة"
+msgstr "Otvori terminal"
 
 #: ../terminal/terminal-preferences.c:331
 msgid "Detach Tab"
-msgstr "افصل اللسان "
+msgstr ""
 
 #: ../terminal/terminal-preferences.c:342
 msgid "Close Tab"
-msgstr "اغلق اللسان"
+msgstr "Zatvori karticu"
 
 #: ../terminal/terminal-preferences.c:353
 msgid "Close Window"
-msgstr "اغلق النافذة"
+msgstr "Zatvori prozor"
 
 #: ../terminal/terminal-preferences.c:364
 msgid "Copy"
-msgstr "انسخ"
+msgstr "Kopiraj"
 
 #: ../terminal/terminal-preferences.c:375
 msgid "Paste"
-msgstr "الصق"
+msgstr "Zalijepi"
 
 #: ../terminal/terminal-preferences.c:386
 msgid "Paste Selection"
-msgstr "الصق المُنتقى"
+msgstr "Zalijepi odabir"
 
 #: ../terminal/terminal-preferences.c:397
 msgid "Preferences"
-msgstr "التفضيلات"
+msgstr "Osobiosti"
 
 #: ../terminal/terminal-preferences.c:408
 msgid "Show menubar"
-msgstr "اعرض شريط القوائم"
+msgstr "Pokaži traku izbornika"
 
 #: ../terminal/terminal-preferences.c:419
 msgid "Show toolbars"
-msgstr "اعرض شريط الأدوات"
+msgstr "Pokaži alatnu traku"
 
 #: ../terminal/terminal-preferences.c:430
 msgid "Show borders"
-msgstr "اعرض الحواف"
+msgstr "Pokaži rubove"
 
 #: ../terminal/terminal-preferences.c:441
 msgid "Fullscreen"
-msgstr "ملء الشاشة"
+msgstr "Puni zaslon"
 
 #: ../terminal/terminal-preferences.c:452
 msgid "Set Title"
-msgstr "حدِّد العنوان"
+msgstr "Postavi naslov"
 
 #: ../terminal/terminal-preferences.c:463 ../terminal/terminal-window.c:236
 msgid "Reset"
-msgstr "أعد الضبط"
+msgstr "Resetiraj"
 
 #: ../terminal/terminal-preferences.c:474
 msgid "Reset and Clear"
-msgstr "أعد الضبط وامسح"
+msgstr "Resetiraj i očisti"
 
 #: ../terminal/terminal-preferences.c:485
 msgid "Previous Tab"
-msgstr "اللسان السابق"
+msgstr "Prethodna kartica"
 
 #: ../terminal/terminal-preferences.c:496
 msgid "Next Tab"
-msgstr "اللسان التالي"
+msgstr "Slijedeća kartica"
 
 #: ../terminal/terminal-preferences.c:507
 msgid "Switch to Tab 1"
-msgstr "تحول للسان 1"
+msgstr "Prebaci na karticu 1"
 
 #: ../terminal/terminal-preferences.c:518
 msgid "Switch to Tab 2"
-msgstr "تحول للسان 2"
+msgstr "Prebaci na karticu 2"
 
 #: ../terminal/terminal-preferences.c:529
 msgid "Switch to Tab 3"
-msgstr "تحول للسان 3"
+msgstr "Prebaci na karticu 3"
 
 #: ../terminal/terminal-preferences.c:540
 msgid "Switch to Tab 4"
-msgstr "تحول للسان 4"
+msgstr "Prebaci na karticu 4"
 
 #: ../terminal/terminal-preferences.c:551
 msgid "Switch to Tab 5"
-msgstr "تحول للسان 5"
+msgstr "Prebaci na karticu 5"
 
 #: ../terminal/terminal-preferences.c:562
 msgid "Switch to Tab 6"
-msgstr "تحول للسان 6"
+msgstr "Prebaci na karticu 6"
 
 #: ../terminal/terminal-preferences.c:573
 msgid "Switch to Tab 7"
-msgstr "تحول للسان 7"
+msgstr "Prebaci na karticu 7"
 
 #: ../terminal/terminal-preferences.c:584
 msgid "Switch to Tab 8"
-msgstr "تحول للسان 8"
+msgstr "Prebaci na karticu 8"
 
 #: ../terminal/terminal-preferences.c:595
 msgid "Switch to Tab 9"
-msgstr "تحول للسان 9"
+msgstr "Prebaci na karticu 9"
 
 #: ../terminal/terminal-preferences.c:606
 msgid "Contents"
-msgstr "المحتويات"
+msgstr "Sadržaj"
 
-#. TRANSLATORS: title for the tab/window used when all other
-#. * possible titles were empty strings
-#: ../terminal/terminal-screen.c:392 ../terminal/terminal-screen.c:591
-#: ../terminal/terminal-screen.c:1532
+#: ../terminal/terminal-screen.c:397 ../terminal/terminal-screen.c:629
+#: ../terminal/terminal-screen.c:1598
 msgid "Untitled"
-msgstr "بدون عنوان"
+msgstr "Nenaslovljeno"
 
-#: ../terminal/terminal-screen.c:482
+#: ../terminal/terminal-screen.c:529
 #, c-format
 msgid "Unable to determine your login shell."
-msgstr "تعذّر تحديد صدفك ولوجك."
+msgstr ""
 
 #. tell the user that we were unable to execute the command
-#: ../terminal/terminal-screen.c:1293
+#: ../terminal/terminal-screen.c:1340
 msgid "Failed to execute child"
-msgstr "فشل تنفيذ الإبن"
+msgstr ""
 
-#: ../terminal/terminal-screen.c:1854
+#: ../terminal/terminal-screen.c:1920
 msgid "Close this tab"
-msgstr "اغلق هذا اللسان"
+msgstr "Zatvori ovu karticu"
 
 #: ../terminal/terminal-shortcut-editor.c:88
 msgid "File"
-msgstr "ملف"
+msgstr "Datoteka"
 
 #: ../terminal/terminal-shortcut-editor.c:99
 msgid "Edit"
-msgstr "حرِّر"
+msgstr "Uredi"
 
 #: ../terminal/terminal-shortcut-editor.c:109
 msgid "View"
-msgstr "اعرض"
+msgstr "Pogled"
 
 #: ../terminal/terminal-shortcut-editor.c:128
 msgid "Go"
-msgstr "انطلق"
+msgstr "Idi"
 
 #: ../terminal/terminal-shortcut-editor.c:145
 msgid "Help"
-msgstr "مساعدة"
+msgstr "Pomoć"
 
 #: ../terminal/terminal-shortcut-editor.c:209
 #: ../terminal/terminal-shortcut-editor.c:505 ../Terminal.glade.h:24
 msgid "Disabled"
-msgstr "مُعطّل"
+msgstr "Onemogućeno"
 
 #: ../terminal/terminal-shortcut-editor.c:221
 msgid "Action"
-msgstr "إجراء"
+msgstr "Akcija"
 
 #: ../terminal/terminal-shortcut-editor.c:228
 msgid "Shortcut key"
-msgstr "مفتاح اختصار"
+msgstr "Tipka prečaca"
 
 #: ../terminal/terminal-shortcut-editor.c:328
 msgid "Compose shortcut"
-msgstr "ألِّف اختصارا"
+msgstr "Napravi prečac"
 
 #: ../terminal/terminal-shortcut-editor.c:333
 msgid "Clea_r"
-msgstr ""
+msgstr "Očist_i"
 
 #: ../terminal/terminal-shortcut-editor.c:352
 msgid "Compose shortcut for:"
-msgstr ""
+msgstr "Napravi prečac za:"
 
 #: ../terminal/terminal-shortcut-editor.c:374
 msgid "Failed to acquire keyboard"
-msgstr ""
+msgstr "Neuspjeh u  zadobivanju tipkovnice"
 
 #: ../terminal/terminal-shortcut-editor.c:376
 msgid "Another application has already acquired control over your keyboard."
-msgstr ""
+msgstr "Drugi program je već zadobio kontrolu nad vašom tipkovnicom"
 
 #: ../terminal/terminal-toolbars-view.c:112
 msgid "Toolbar Editor"
-msgstr "محرر شريط الأدوات"
+msgstr "Uređivač alatne trake"
 
 #: ../terminal/terminal-widget.c:320
 msgid "Copy Email Address"
-msgstr "انسخ عنوان البريد الألكتروني"
+msgstr "Kopiraj email- adresu"
 
 #: ../terminal/terminal-widget.c:321
 msgid "Compose Email"
-msgstr ""
+msgstr " Napiši email"
 
 #: ../terminal/terminal-widget.c:325
 msgid "Copy Link Address"
-msgstr "انسخ عنوان الوصلة"
+msgstr "Kopiraj adresu poveznice"
 
 #: ../terminal/terminal-widget.c:326
 msgid "Open Link"
-msgstr "افتح الوصلة"
+msgstr "Otvori poveznicu"
 
 #: ../terminal/terminal-widget.c:480
 #, c-format
@@ -490,231 +485,235 @@ msgstr ""
 msgid ""
 "Unable to drop Mozilla URL on terminal: Wrong format (%d) or length (%d)\n"
 msgstr ""
+"Nije moguće spustiti Mozilla URL u terminal: pogrešan format (%d) ili dužina"
+"(%d)\n"
 
 #: ../terminal/terminal-widget.c:522
 #, c-format
 msgid "Unable to drop URI list on terminal: Wrong format (%d) or length (%d)\n"
 msgstr ""
+"Nije moguće spustiti URI listu u terminal: pogrešan format (%d)  ili dužina "
+"(%d)\n"
 
 #: ../terminal/terminal-widget.c:567
 #, c-format
 msgid "Received invalid color data: Wrong format (%d) or length (%d)\n"
 msgstr ""
+"Primljeni pogrešni podaci o boji:Pogrešan format (%d) ili dužina  (%d)\n"
 
 #. tell the user that we were unable to open the responsible application
 #: ../terminal/terminal-widget.c:704
 #, c-format
 msgid "Failed to open the URL `%s'"
-msgstr "فشل في فتح العنوان `%s'"
+msgstr "Nisam uspio otvoriti URL `%s'"
 
 #: ../terminal/terminal-window.c:221
 msgid "_File"
-msgstr "_ملف"
+msgstr "_Datoteka"
 
 #: ../terminal/terminal-window.c:222
 msgid "Open _Tab"
-msgstr "افتح _لسان"
+msgstr "Otvori _karticu"
 
 #: ../terminal/terminal-window.c:222
 msgid "Open a new terminal tab"
-msgstr "افتح لسان طرفية جديد"
+msgstr "Otvori novu terminalnu karticu"
 
 #: ../terminal/terminal-window.c:223
 msgid "Open T_erminal"
-msgstr "افتح _طرفية"
+msgstr "Otvori T_erminal"
 
 #: ../terminal/terminal-window.c:223
 msgid "Open a new terminal window"
-msgstr "افتح نافذة طرفية جديدة"
+msgstr "Otvori novi terminalni prozor"
 
 #: ../terminal/terminal-window.c:224
 msgid "_Detach Tab"
-msgstr "ا_فصل اللسان"
+msgstr ""
 
 #: ../terminal/terminal-window.c:224
 msgid "Open a new window for the current terminal tab"
-msgstr "افتح نافذة جديدة من لسان الطرفية الحالي"
+msgstr "Otvori novi prozor za trenutnu karticu terminala"
 
 #: ../terminal/terminal-window.c:225
 msgid "C_lose Tab"
-msgstr "أ_غلق اللسان"
+msgstr "Z_atvori karticu"
 
 #: ../terminal/terminal-window.c:225
 msgid "Close the current terminal tab"
-msgstr "اغلق لسان الطرفية الحالي"
+msgstr "Zatvori trenutnu terminalni karticu"
 
 #: ../terminal/terminal-window.c:226
 msgid "_Close Window"
-msgstr "أ_غلق النّافذة"
+msgstr "_Zatvori prozor"
 
 #: ../terminal/terminal-window.c:226
 msgid "Close the terminal window"
-msgstr "أغلق نافذة الطرفية"
+msgstr "Zatvori terminalni prozor"
 
 #: ../terminal/terminal-window.c:227
 msgid "_Edit"
-msgstr "_حرّر"
+msgstr "_Uredi"
 
 #: ../terminal/terminal-window.c:228
 msgid "_Copy"
-msgstr "ا_نسخ"
+msgstr "_Kopiraj"
 
 #: ../terminal/terminal-window.c:228
 msgid "Copy to clipboard"
-msgstr "انسخ إلى الحافظة"
+msgstr ""
 
 #: ../terminal/terminal-window.c:229
 msgid "_Paste"
-msgstr "ا_لصق"
+msgstr "_Zalijepi"
 
 #: ../terminal/terminal-window.c:229
 msgid "Paste from clipboard"
-msgstr "إلصق من الحافظة"
+msgstr ""
 
 #: ../terminal/terminal-window.c:230
 msgid "Paste _Selection"
-msgstr "الصق ال_مُنتقى"
+msgstr "Zalijepi _Odabir"
 
 #: ../terminal/terminal-window.c:230
 msgid "Paste from primary selection"
-msgstr ""
+msgstr "Zalijepi iz prvog odabira"
 
 #: ../terminal/terminal-window.c:231
 msgid "_Toolbars..."
-msgstr "أشرطة أ_دوات..."
+msgstr "_Alatne trake"
 
 #: ../terminal/terminal-window.c:231
 msgid "Customize the toolbars"
-msgstr ""
+msgstr "Prilagodi alatne trake"
 
 #: ../terminal/terminal-window.c:232
 msgid "Pr_eferences..."
-msgstr "_تفضيلات"
+msgstr "Os_obitosti"
 
 #: ../terminal/terminal-window.c:232
 msgid "Open the Terminal preferences dialog"
-msgstr "افتح حوار تفضيلات الطرفية"
+msgstr "Otvori dijalog stavki terminala"
 
 #: ../terminal/terminal-window.c:233
 msgid "_View"
-msgstr "ا_عرض"
+msgstr "_Pogled"
 
 #: ../terminal/terminal-window.c:234
 msgid "_Terminal"
-msgstr "_طرفية"
+msgstr "_Terminal"
 
 #: ../terminal/terminal-window.c:235
 msgid "_Set Title..."
-msgstr "اضبط ال_عنوان..."
+msgstr "_Postavi naslov"
 
 #: ../terminal/terminal-window.c:235
 msgid "Set a custom title for the current tab"
-msgstr ""
+msgstr "Postavi prilagođeni naslov za trenutnu stranicu"
 
 #: ../terminal/terminal-window.c:236
 msgid "_Reset"
-msgstr "_صفر"
+msgstr "_Resetiraj"
 
 #: ../terminal/terminal-window.c:237
 msgid "Reset and C_lear"
-msgstr "أعد الضبط و ا_مسح"
+msgstr "Resetiraj i o_čisti"
 
 #: ../terminal/terminal-window.c:237
-#, fuzzy
 msgid "Reset and clear"
-msgstr "أعد الضبط وامسح"
+msgstr "Resetiraj i očisti"
 
 #: ../terminal/terminal-window.c:238
 msgid "_Go"
-msgstr "ا_نطلق"
+msgstr "_Idi"
 
 #: ../terminal/terminal-window.c:239
 msgid "_Previous Tab"
-msgstr "اللسان ال_سابق"
+msgstr "_Prethodna kartica"
 
 #: ../terminal/terminal-window.c:239
 msgid "Switch to previous tab"
-msgstr "تحوّل للسان السابق"
+msgstr "Prebaci na prethodnu karticu"
 
 #: ../terminal/terminal-window.c:240
 msgid "_Next Tab"
-msgstr "اللسان ال_تالي"
+msgstr "_Slijedeća kartica"
 
 #: ../terminal/terminal-window.c:240
 msgid "Switch to next tab"
-msgstr "تحوّل للسان التالي"
+msgstr "Prebaci na slijedeću karticu"
 
 #: ../terminal/terminal-window.c:241
 msgid "_Help"
-msgstr "_مساعدة"
+msgstr "_Pomoć"
 
 #: ../terminal/terminal-window.c:242
 msgid "_Contents"
-msgstr "الم_حتويات"
+msgstr "_Sadržaj"
 
 #: ../terminal/terminal-window.c:242
 msgid "Display help contents"
-msgstr "اعرض محتويات المساعدة"
+msgstr "Prikaži sadržaj pomoći"
 
 #: ../terminal/terminal-window.c:243
 msgid "_Report a bug"
-msgstr ""
+msgstr "_Prijavi problem"
 
 #: ../terminal/terminal-window.c:243
 msgid "Report a bug in Terminal"
-msgstr ""
+msgstr "Prijavi problem u Terminalu"
 
 #: ../terminal/terminal-window.c:244
 msgid "_About"
-msgstr "_حوْل"
+msgstr "_O programu"
 
 #: ../terminal/terminal-window.c:244
 msgid "Display information about Terminal"
-msgstr "اعرض معلومات حول الطرفية"
+msgstr "Prikaži informacije o Terminalu"
 
 #: ../terminal/terminal-window.c:245
 msgid "_Input Methods"
-msgstr "طرق ال_إدخال"
+msgstr "_Ulazne metode"
 
 #: ../terminal/terminal-window.c:250
 msgid "Show _Menubar"
-msgstr "أظهر _شريط القوائم"
+msgstr "Pokaži _Traku izbornika"
 
 #: ../terminal/terminal-window.c:250
 msgid "Show/hide the menubar"
-msgstr "أظهر/اخفِ شريط القوائم"
+msgstr "Pokaži/sakrij traku izbornika"
 
 #: ../terminal/terminal-window.c:251
 msgid "Show _Toolbars"
-msgstr "أظهر أشرطة _الأدوات"
+msgstr "Pokaži _Alatne trake"
 
 #: ../terminal/terminal-window.c:251
 msgid "Show/hide the toolbars"
-msgstr ""
+msgstr "Pokaži/sakrij alatne trake"
 
 #: ../terminal/terminal-window.c:252
 msgid "Show Window _Borders"
-msgstr ""
+msgstr "Pokaži Rubove _prozora"
 
 #: ../terminal/terminal-window.c:252
 msgid "Show/hide the window decorations"
-msgstr ""
+msgstr "Pokaži/sakrij ukrašavanje prozora"
 
 #: ../terminal/terminal-window.c:253
 msgid "_Fullscreen"
-msgstr "_ملء الشاشة"
+msgstr "_Puni zaslon"
 
 #: ../terminal/terminal-window.c:253
 msgid "Toggle fullscreen mode"
-msgstr "بدّل نمط ملء الشاشة"
+msgstr ""
 
 #: ../terminal/terminal-window.c:560
 msgid "Warning"
-msgstr "تحذير"
+msgstr "Upozorenje"
 
 #: ../terminal/terminal-window.c:571
 msgid "Close all tabs"
-msgstr "اغلق كل الألسنة"
+msgstr "Zatvori sve kartice"
 
 #: ../terminal/terminal-window.c:590
 #, c-format
@@ -722,152 +721,144 @@ msgid ""
 "This window has %d tabs open. Closing\n"
 "this window will also close all its tabs."
 msgstr ""
+"Ovaj prozor ima %d otvorenih kartica.Zatvaranje\n"
+"ovog prozora zatvoriti će sve kartice."
 
 #: ../terminal/terminal-window.c:593
 msgid "Close all tabs?"
-msgstr "إغلاق جميع الألسنة؟"
+msgstr "Zatvoriti sve kartice?"
 
 #: ../terminal/terminal-window.c:606
 msgid "Do _not ask me again"
-msgstr "لا _تسألني ثانية"
+msgstr "Ne_pitaj me ponovo"
 
 #: ../terminal/terminal-window.c:1555
 msgid "Window Title|Set Title"
-msgstr ""
+msgstr "Naslov prozora |Postavi naslov"
 
 #: ../terminal/terminal-window.c:1568
-#, fuzzy
 msgid "Title:"
-msgstr "العنوان"
+msgstr "Naslov:"
 
 #: ../terminal/terminal-window.c:1580
 msgid "Enter the title for the current terminal tab"
-msgstr ""
+msgstr "Unesi naslov trenutne kartice terminala"
 
 #: ../Terminal.desktop.in.in.h:2
 msgid "Terminal Emulator"
-msgstr "محاكي طرفية"
+msgstr ""
 
 #: ../Terminal.glade.h:1
-#, fuzzy
 msgid "$TERM s_etting:"
-msgstr "اعدادات <tt>$TERM</tt>:"
+msgstr ""
 
 #: ../Terminal.glade.h:2
 msgid "ASCII DEL"
-msgstr "ASCII DEL"
+msgstr ""
 
 #: ../Terminal.glade.h:3
-#, fuzzy
 msgid "Ad_vanced"
-msgstr "متقدم"
+msgstr "Na_predno"
 
 #: ../Terminal.glade.h:4
-#, fuzzy
 msgid "Allow bold te_xt"
-msgstr "اسمح بالخط الثخين"
+msgstr "Dozvoli podebljani tek_st"
 
 #: ../Terminal.glade.h:5
 msgid "Auto-detect"
-msgstr "تعرف تلقائي"
+msgstr ""
 
 #: ../Terminal.glade.h:6
-#, fuzzy
 msgid "Background"
-msgstr "صورة خلفية"
+msgstr "Pozadina"
 
 #: ../Terminal.glade.h:7
 msgid "Background image"
-msgstr "صورة خلفية"
+msgstr "Pozadinska slika"
 
 #: ../Terminal.glade.h:8
 msgid "Centered"
-msgstr "مركزي"
+msgstr "Centrirano"
 
 #: ../Terminal.glade.h:9
 msgid "Choose Terminal Font"
-msgstr "اختر خط الطرفية"
+msgstr "Odaberi font terminala"
 
 #: ../Terminal.glade.h:10
-#, fuzzy
 msgid "Choose tab activity color"
-msgstr "اختر لون نص الطرفية"
+msgstr "Odaberite boju aktivnosti kartice"
 
 #: ../Terminal.glade.h:11
 msgid "Choose terminal background color"
-msgstr "اختر لون خلفية الطرفية"
+msgstr "Odaberi pozadinsku boju terminala"
 
 #: ../Terminal.glade.h:12
 msgid "Choose terminal cursor color"
-msgstr "اختر لون مؤشر الطرفية"
+msgstr "Odaberi boju pokazivača terminala"
 
 #: ../Terminal.glade.h:13
 msgid "Choose terminal text color"
-msgstr "اختر لون نص الطرفية"
+msgstr "Odaberi boju teksta terminala"
 
 #: ../Terminal.glade.h:14
 msgid "Choose terminal text selection background color"
-msgstr "اختر لون خلفية نص الطرفية المنتقى"
+msgstr "Odaberite pozadinsku boju odabira terminalnog teksta"
 
 #: ../Terminal.glade.h:15
 msgid "Color Selector"
-msgstr "منتقي الألوان"
+msgstr "Odabirač boja"
 
 #: ../Terminal.glade.h:16
-#, fuzzy
 msgid "Command"
-msgstr "<b>أمر</b>"
+msgstr "Naredba"
 
 #: ../Terminal.glade.h:17
-#, fuzzy
 msgid "Compatibility"
-msgstr "<b>التوافقية</b>"
+msgstr "Kompatibilnost"
 
 #: ../Terminal.glade.h:18
 msgid ""
 "Consider the following characters part of a _word\n"
 "when double clicking:"
 msgstr ""
+"Smatraj slijedeće znakove dijelom _riječi\n"
+"kod dvostrukog klika"
 
 #: ../Terminal.glade.h:20
 msgid "Control-H"
 msgstr "Control-H"
 
 #: ../Terminal.glade.h:21
-#, fuzzy
 msgid "Cu_rsor color:"
-msgstr "لون ال_نص والمؤشر:"
+msgstr "Bo_ja pokazivača"
 
 #: ../Terminal.glade.h:22
 msgid "Disable all me_nu access keys (such as Alt+f)"
-msgstr "عطِّل كل مفاتيح الوصول لشريط القوائم (مثل Alt+f)"
+msgstr "Onemogući sve tip_ke pristupa izbornika (poput Alt+f)"
 
 #: ../Terminal.glade.h:23
-#, fuzzy
 msgid "Disable m_enu shortcut keys (F10 by default)"
-msgstr "عطِّل مفتاح اختصار القائمة (F10 افتراضا)"
+msgstr "Onemogući lj_učeve prečaca izbornika (F10 zadano)"
 
 #: ../Terminal.glade.h:25
 msgid "Display _borders around new windows"
-msgstr "اعرض _حواف حول النوافذ الجديدة"
+msgstr "Prikaži _rubove oko novih prozora"
 
 #: ../Terminal.glade.h:26
 msgid "Display _menubar in new windows"
-msgstr "اعرض شريط _قوائم في النوافذ الجديدة"
+msgstr "Prikaži _traku izbornika u novim prozorima"
 
 #: ../Terminal.glade.h:27
 msgid "Display _toolbars in new windows"
-msgstr "اعرض شريط أ_دوات في النوافذ الجديدة"
+msgstr "Prikaži _alatne trake u novim prozorima"
 
 #: ../Terminal.glade.h:28
-#, fuzzy
 msgid "Double Click"
-msgstr "<b>نقر مزدوج</b>"
+msgstr "Dvostruki klik"
 
 #: ../Terminal.glade.h:29
-#, fuzzy
 msgid "Enab_le anti-aliasing for the terminal font"
-msgstr "فعِّل تنعيم الحواف لخط الطرفية"
+msgstr ""
 
 #: ../Terminal.glade.h:30
 msgid ""
@@ -876,16 +867,14 @@ msgid ""
 "terminal rendering performance and reduce the overall system load on slow "
 "systems."
 msgstr ""
-"فعِّل هذا الخيار ذا أردت ان تستخدم الطرفية تنعيم الحواف عند عرض النص في نافذة "
-"الطرفية. تعطيل هذا الخيار قد يُسرِّع الأداء بشكل كبير ويقلل حِمْل النظام في "
-"الأنظمة البطيئة."
 
 #: ../Terminal.glade.h:31
 msgid ""
 "Enable this option to allow applications running inside the terminal windows "
 "to use bold text."
 msgstr ""
-"فعِّل هذا الخيار لتسمح للتطبيقات التي تعمل داخل الطرفية باستخدام خط ثخين."
+"Omogućite ovu opciju da rpogrami pokrenuti unutar treminalih prozora mogu "
+"koristiti podebljani tekst"
 
 #: ../Terminal.glade.h:32
 msgid ""
@@ -896,26 +885,30 @@ msgstr ""
 #: ../Terminal.glade.h:33
 msgid ""
 "Enable this option to show the menubar in newly created terminal windows."
-msgstr "فعِّل هذا الخيار لتعرض شريط قوائم في النوافذ المنشأة حديثا."
+msgstr ""
+"Omogući ovu opciju za prikazivanje trake izbornika u novostvorenim prozorima "
+"terminala"
 
 #: ../Terminal.glade.h:34
 msgid ""
 "Enable this option to show the toolbars in newly created terminal windows."
-msgstr "فعِّل هذا الخيار لتعرض شريط أدوات في النوافذ المنشأة حديثا."
+msgstr ""
+"Omogući ovu opciju za prikazivanje altnih traka u novostvorenim prozorima "
+"terminala"
 
 #: ../Terminal.glade.h:35
 msgid ""
 "Enable this option to show window decorations around newly created terminal "
 "windows."
-msgstr "فعِّل هذا الخيار لتعرض زخرفة النوافذ حول النوافذ المنشأة حديثا."
+msgstr ""
+"Omogući ovu opciju za prikazivanje ukrašavanja prozora oko novodtvorenih "
+"prozora terminala"
 
 #: ../Terminal.glade.h:36
 msgid ""
 "Enables you to press any key on the keyboard to scroll down the terminal "
 "window to the command prompt."
 msgstr ""
-"يمكنك من ضغط أي زر على لوحة المفاتيح لتلف نافذة الطرفية لأسفل حتى سطر "
-"الأوامر."
 
 #: ../Terminal.glade.h:37
 msgid "Erase TTY"
@@ -923,189 +916,163 @@ msgstr ""
 
 #: ../Terminal.glade.h:38
 msgid "Escape sequence"
-msgstr "Escape sequence"
+msgstr ""
 
 #: ../Terminal.glade.h:39
 msgid "Font"
-msgstr ""
+msgstr "Font"
 
 #: ../Terminal.glade.h:40
 msgid "General"
-msgstr "عام"
+msgstr "Osnovno"
 
 #: ../Terminal.glade.h:41
 msgid "Goes after initial title"
-msgstr "يأتي بعد العنوان الأولي"
+msgstr "Ide proslije početnog naslova"
 
 #: ../Terminal.glade.h:42
 msgid "Goes before initial title"
-msgstr "يأتي قبل العنوان الأولي"
+msgstr "Ide prije početnog naslova"
 
 #: ../Terminal.glade.h:43
 msgid "Isn't displayed"
-msgstr "لا يُعرض"
+msgstr "Nije prikazano"
 
 #: ../Terminal.glade.h:44
-#, fuzzy
 msgid "Menubar Access"
-msgstr "<b>الوصول لشريط القوائم</b>"
+msgstr "Pristup traci izbornika"
 
 #: ../Terminal.glade.h:45
 msgid "None (use solid color)"
-msgstr "بلا (استعمل لون ثابت)"
+msgstr ""
 
 #: ../Terminal.glade.h:46
 msgid "On the left side"
-msgstr "على الجانب الأيسر"
+msgstr "Na lijevoj strani"
 
 #: ../Terminal.glade.h:47
 msgid "On the right side"
-msgstr "على الجانب الأيمن"
+msgstr "Na desnoj strani"
 
 #: ../Terminal.glade.h:48
 msgid "Open a dialog to specify the color"
-msgstr "افتح حوار لتحديد لون"
+msgstr "Otvori dialod za određivanje boje"
 
 #: ../Terminal.glade.h:49
-#, fuzzy
 msgid "Opening New Windows"
-msgstr "<b>افتح نافذة جديدة</b>"
+msgstr "Otvaranje novih prozora"
 
 #: ../Terminal.glade.h:50
-#, fuzzy
 msgid "Palette"
-msgstr "<b>لوحة ألوان</b>"
+msgstr "Paleta"
 
 #: ../Terminal.glade.h:51
-#, fuzzy
 msgid "Palette entry 1"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 1"
 
 #: ../Terminal.glade.h:52
-#, fuzzy
 msgid "Palette entry 10"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 10"
 
 #: ../Terminal.glade.h:53
-#, fuzzy
 msgid "Palette entry 11"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 11"
 
 #: ../Terminal.glade.h:54
-#, fuzzy
 msgid "Palette entry 12"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 12"
 
 #: ../Terminal.glade.h:55
-#, fuzzy
 msgid "Palette entry 13"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 13"
 
 #: ../Terminal.glade.h:56
-#, fuzzy
 msgid "Palette entry 14"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 14"
 
 #: ../Terminal.glade.h:57
-#, fuzzy
 msgid "Palette entry 15"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 15"
 
 #: ../Terminal.glade.h:58
-#, fuzzy
 msgid "Palette entry 16"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 16"
 
 #: ../Terminal.glade.h:59
-#, fuzzy
 msgid "Palette entry 2"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 2"
 
 #: ../Terminal.glade.h:60
-#, fuzzy
 msgid "Palette entry 3"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta ulaz 3"
 
 #: ../Terminal.glade.h:61
-#, fuzzy
 msgid "Palette entry 4"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 4"
 
 #: ../Terminal.glade.h:62
-#, fuzzy
 msgid "Palette entry 5"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 5"
 
 #: ../Terminal.glade.h:63
-#, fuzzy
 msgid "Palette entry 6"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 6"
 
 #: ../Terminal.glade.h:64
-#, fuzzy
 msgid "Palette entry 7"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 7"
 
 #: ../Terminal.glade.h:65
-#, fuzzy
 msgid "Palette entry 8"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 8"
 
 #: ../Terminal.glade.h:66
-#, fuzzy
 msgid "Palette entry 9"
-msgstr "عنصر لوحة الألوان %d"
+msgstr "Paleta unos 9"
 
 #: ../Terminal.glade.h:67
 msgid "Replaces initial title"
-msgstr "يستبدل العنوان الأولي"
+msgstr "Zamjeni početni naslov"
 
 #: ../Terminal.glade.h:68
-#, fuzzy
 msgid "Rese_t double click options to defaults"
-msgstr "أ_عد ضبط خيارات التوافقية للإفتراضي"
+msgstr ""
 
 #: ../Terminal.glade.h:69
-#, fuzzy
 msgid "Reset tab activity _indicator after"
-msgstr "اختر لون نص الطرفية"
+msgstr ""
 
 #: ../Terminal.glade.h:70
 msgid "Scaled"
-msgstr "محجّم"
+msgstr "Skalirano"
 
 #: ../Terminal.glade.h:71
-#, fuzzy
 msgid "Scr_ollbar is:"
-msgstr "_شريط التمرير:"
+msgstr ""
 
 #: ../Terminal.glade.h:72
 msgid "Scroll on _keystroke"
-msgstr "لف عند _ضغطة مفتاح"
+msgstr ""
 
 #: ../Terminal.glade.h:73
-#, fuzzy
 msgid "Scroll on ou_tput"
-msgstr "_لُف مع الخرْج"
+msgstr ""
 
 #: ../Terminal.glade.h:74
 msgid "Scroll single _line using Shift-Up/-Down keys"
 msgstr ""
 
 #: ../Terminal.glade.h:75
-#, fuzzy
 msgid "Scroll_back:"
-msgstr "اللف لل_خلف:"
+msgstr ""
 
 #: ../Terminal.glade.h:76
-#, fuzzy
 msgid "Scrolling"
-msgstr "<b>اللف</b>"
+msgstr ""
 
 #: ../Terminal.glade.h:77
-#, fuzzy
 msgid "Select Background Image File"
-msgstr "انتقِ نلف صورة الخلفيّة"
+msgstr "Odaberi pozadinsku slikovnu datoteku"
 
 #: ../Terminal.glade.h:78
 msgid ""
@@ -1114,71 +1081,57 @@ msgid ""
 "about differences between running it as interactive shell and running it as "
 "login shell."
 msgstr ""
-"انتقِ هذا الخيار لتجبر طرفيتك على تشغيل الصدفة كصدفة ولوج عندما تفتح طرفيات "
-"جديدة. راجع وثائق صدفتك لتحصل على تفاصيل أكثر حول الفرق بين تشغيلها كصدفة "
-"تفاعلية أو صدفة ولوج."
 
 #: ../Terminal.glade.h:79
-#, fuzzy
 msgid "Shortcut Keys"
-msgstr "مفتاح اختصار"
+msgstr "Tipke prečaca"
 
 #: ../Terminal.glade.h:80
 msgid ""
 "Specifies the number of lines that you can scroll back using the scrollbar."
-msgstr "يحدد عدد السطور التي يمكن أتلفها للخلف باستخدام شريط التمرير."
+msgstr ""
 
 #: ../Terminal.glade.h:81
-#, fuzzy
 msgid "St_yle:"
-msgstr "أ_سلوب:"
+msgstr "Stil"
 
 #: ../Terminal.glade.h:82
 msgid "Stretched"
-msgstr "مُمدد"
+msgstr "Rastegnuto"
 
 #: ../Terminal.glade.h:83
-#, fuzzy
 msgid "Tab Activity Indicator"
-msgstr "اختر لون نص الطرفية"
+msgstr "Indikator kartične aktivnosti"
 
 #: ../Terminal.glade.h:84
-#, fuzzy
 msgid "Tab activit_y color:"
-msgstr "اختر لون نص الطرفية"
+msgstr "Boja aktivnost_i kartice"
 
 #: ../Terminal.glade.h:85
 msgid "Terminal Preferences"
-msgstr "تفضيلات الطرفية"
+msgstr "Osobitosti terminala"
 
 #: ../Terminal.glade.h:86
 msgid "Terminal applications have this color palette available to them:"
-msgstr "تتوفر لوحة الألوان هذه لتطبيقات الطرفية:"
+msgstr "Terminalnim programima dostupna je ova paleta boja:"
 
 #: ../Terminal.glade.h:87
-#, fuzzy
 msgid "Text Selection"
-msgstr "<b>انتقاء النص</b>"
+msgstr "Odabir teksta"
 
 #: ../Terminal.glade.h:88
-#, fuzzy
 msgid ""
 "These options may cause some applications to behave\n"
 "incorrectly. They are only here to allow you to work around\n"
 "certain applications and operating systems that expect\n"
 "different terminal behavior."
 msgstr ""
-"قد ي{دي هذا الخيار إلى سلوك بعض البرامج سلوكا خاطئا. لقد وُضع هنا فقط ليسمح "
-"لك بالإلتفاف حول بعض التطبيقات أو أنظمة التشغيل التي تتوقع سلوكا مختلفا من "
-"الطرفية."
 
 #: ../Terminal.glade.h:92
 msgid ""
 "This option controls whether the terminal will scroll down automatically "
 "whenever new output is generated by the commands running inside the terminal."
 msgstr ""
-"يتحكم هذا الخيار فيما إذا كانت الطرفية ستلف لأسفل آليا عندما ينشأ خرج جديد "
-"من الأوامر التي تعمل داخل الطرفية."
 
 #: ../Terminal.glade.h:93
 msgid ""
@@ -1189,330 +1142,93 @@ msgid ""
 msgstr ""
 
 #: ../Terminal.glade.h:94
-#, fuzzy
 msgid "Tiled"
-msgstr "مبلّط"
+msgstr ""
 
 #: ../Terminal.glade.h:95
 msgid "Title"
-msgstr "العنوان"
+msgstr "Naslov"
 
 #: ../Terminal.glade.h:96
-#, fuzzy
 msgid "Transpare_ncy:"
-msgstr "خلفية شفافة"
+msgstr "Prozirn_ost"
 
 #: ../Terminal.glade.h:97
 msgid "Transparent background"
-msgstr "خلفية شفافة"
+msgstr "Prozirna pozadina"
 
 #: ../Terminal.glade.h:98
 msgid "Use _default color"
-msgstr "استخدم اللون الإ_فتراضي"
+msgstr "Koristi _zadanu boju"
 
 #: ../Terminal.glade.h:99
 msgid "Use a custom text selection background color"
-msgstr "اختر لون خلفية نص الطرفية المنتقى المخصص"
+msgstr "Koristi prilagođenu pozadinsku boju odabira teksta"
 
 #: ../Terminal.glade.h:100
-#, fuzzy
 msgid "Use c_ustom color:"
-msgstr "استخدم لون _مخصص"
+msgstr "Koristi p_rilagođenu boju"
 
 #: ../Terminal.glade.h:101
 msgid "Use the default text selection background color"
-msgstr "اختر لون خلفية النص المنتقى الإفتراضي"
+msgstr "Koristi zadanu pozadinsku boju odabira teksta"
 
 #: ../Terminal.glade.h:102
-#, fuzzy
 msgid "_Appearance"
-msgstr "المظهر"
+msgstr "_Izgled"
 
 #: ../Terminal.glade.h:103
 msgid "_Background color:"
-msgstr "لون ال_خلفية:"
+msgstr "_Pozadinska boja"
 
 #: ../Terminal.glade.h:104
 msgid "_Backspace key generates:"
-msgstr "مفتاح _Backspace يولِّد:"
+msgstr ""
 
 #: ../Terminal.glade.h:105
-#, fuzzy
 msgid "_Colors"
-msgstr "ألوان"
+msgstr "_Boje"
 
 #: ../Terminal.glade.h:106
 msgid "_Delete key generates:"
-msgstr "مفتاح ال_حذف يولد:"
+msgstr ""
 
 #: ../Terminal.glade.h:107
 msgid "_Dynamically-set title:"
-msgstr "العنوان المحدد _ديناميكيا:"
+msgstr ""
 
 #: ../Terminal.glade.h:108
 msgid "_File:"
-msgstr "_ملف:"
+msgstr "_Datoteka"
 
 #: ../Terminal.glade.h:109
-#, fuzzy
 msgid "_General"
-msgstr "عام"
+msgstr "_Osnovno"
 
 #: ../Terminal.glade.h:110
 msgid "_Initial title:"
-msgstr "العنوان الأ_ولي:"
+msgstr "_Početni naslov"
 
 #: ../Terminal.glade.h:111
-#, fuzzy
 msgid "_Reset compatibility options to defaults"
-msgstr "أ_عد ضبط خيارات التوافقية للإفتراضي"
+msgstr "_Vrati opcije kompatibilnosti na zadano"
 
 #: ../Terminal.glade.h:112
 msgid "_Run command as login shell"
-msgstr "_شغِّل أمر كصدفة ولوج"
+msgstr ""
 
 #: ../Terminal.glade.h:113
-#, fuzzy
 msgid "_Shortcuts"
-msgstr "اختصارات"
+msgstr "_Prečaci"
 
 #: ../Terminal.glade.h:114
-#, fuzzy
 msgid "_Text color:"
-msgstr "لون ال_نص والمؤشر:"
+msgstr "_Boja teksta"
 
 #: ../Terminal.glade.h:115
 msgid "_Update utmp/wtmp records when command is launched"
-msgstr "_حدِّث سجلّات utmp/wtmp عند إطلاق أمر"
+msgstr ""
 
 #: ../Terminal.glade.h:116
 msgid "seconds"
-msgstr ""
-
-#~ msgid ""
-#~ "  -h, --help                          Print this help message and exit"
-#~ msgstr ""
-#~ "  -h, --help                          اطبع رسالة المساعدة هذه ثم اخرج"
-
-#, fuzzy
-#~ msgid ""
-#~ "  -V, --version                       Print version information and exit"
-#~ msgstr "  -v, --version                       اطبع معلومات الإصدارة ثم اخرج"
-
-#~ msgid ""
-#~ "  --disable-server                    Do not register with the D-BUS\n"
-#~ "                                      session message bus"
-#~ msgstr ""
-#~ "  --disable-server                    لا تسجل مع ناقل\n"
-#~ "                                      رسائل جلسة D-BUS"
-
-#~ msgid "  --default-display=DISPLAY           default X display to use"
-#~ msgstr "  --default-display=DISPLAY           عرض x الإفتراضي اللذي سيُستخدم"
-
-#~ msgid ""
-#~ "  -x, --execute                       Execute the remainder of the "
-#~ "command\n"
-#~ "                                      line inside the terminal"
-#~ msgstr ""
-#~ "  -x, --execute                       نفذّ باقي سطر الأوامر\n"
-#~ "                                      داخل الطرفية"
-
-#~ msgid ""
-#~ "  -e, --command=STRING                Execute the argument to this "
-#~ "option\n"
-#~ "                                      inside the terminal"
-#~ msgstr ""
-#~ "  -e, --command=STRING                نفِّذ معاملات هذا الخيار داخل الطرفية"
-
-#~ msgid ""
-#~ "  --working-directory=DIRNAME         Set the terminal's working directory"
-#~ msgstr "  --working-directory=DIRNAME        حدد مجلّد عمل الطرفية"
-
-#~ msgid "  -T, --title=TITLE                   Set the terminal's title"
-#~ msgstr "  -T, --title=TITLE                   حدد عنوان الطرفية"
-
-#, fuzzy
-#~ msgid ""
-#~ "  -I, --icon=ICON                     Set the terminal's icon as an icon\n"
-#~ "                                      name or filename"
-#~ msgstr ""
-#~ "  -e, --command=STRING                نفِّذ معاملات هذا الخيار داخل الطرفية"
-
-#~ msgid "Unable to launch terminal: %s\n"
-#~ msgstr "تعذّر تشغيل الطرفية: %s\n"
-
-#~ msgid ""
-#~ "Option \"--sm-client-id\" requires specifying the session id as its "
-#~ "parameter"
-#~ msgstr "يحتاج الخيار \"--sm-client-id\" لتحديد معرِّف (id) الجلية كمعامل له"
-
-#~ msgid "<b>Title:</b>"
-#~ msgstr "<b>العنوان:</b>"
-
-#~ msgid "Usage: Terminal [OPTION...]"
-#~ msgstr "الإستخدام: Terminal [OPTION...]"
-
-#~ msgid "<b>Title</b>"
-#~ msgstr "<b>عنوان</b>"
-
-#~ msgid ""
-#~ "The command running inside the terminal may dynamically set a new title."
-#~ msgstr "قد يحدد الأمر الذي يعمل داخل الطرفية العنوان بشكل ديناميكي."
-
-#~ msgid "<b>Font</b>"
-#~ msgstr "<b>خط</b>"
-
-#~ msgid "<b>Background</b>"
-#~ msgstr "<b>الخلفية</b>"
-
-#~ msgid "Shade transparent or image background:"
-#~ msgstr "ظلل الصورة أو الخلفيّة الشفّافة:"
-
-#~ msgid "<small><i>None</i></small>"
-#~ msgstr "<small><i>بلا</i></small>"
-
-#~ msgid "<small><i>Maximum</i></small>"
-#~ msgstr "<small><i>أقصى</i></small>>"
-
-#~ msgid "<b>Foreground and Background</b>"
-#~ msgstr "<b>الأمامية والخافية</b>"
-
-#, fuzzy
-#~ msgid "<b>Tab activity</b>"
-#~ msgstr "<b>التوافقية</b>"
-
-#~ msgid "<b>Shortcut keys</b>"
-#~ msgstr "<b>مفاتيح الإختصارات</b>"
-
-#~ msgid "Web Browser"
-#~ msgstr "متصفح وِب"
-
-#~ msgid "Mail Reader"
-#~ msgstr "قاريء البريد"
-
-#~ msgid ""
-#~ "Choose your preferred Web Browser. The preferred\n"
-#~ "Web Browser opens when you right-click on a URL\n"
-#~ "and select Open Link from the context menu."
-#~ msgstr ""
-#~ "اختر متصفح الوِب الذي تفضله. يفتح المتصفح المفضل\n"
-#~ "عندما تنقر نقرا أيمنا على مسار وِب\n"
-#~ "وتختار افتح الوصلت من قائمة السياق."
-
-#~ msgid ""
-#~ "Choose your preferred Mail Reader. The preferred\n"
-#~ "Mail Reader opens when you right-click on an email\n"
-#~ "address and select Compose Email from the context\n"
-#~ "menu."
-#~ msgstr ""
-#~ "اختر قاريء البريد الذي تفضله. يفتح قاؤيء البريد\n"
-#~ "المفضل عندما تنقر نقرا أيمنا على عنوان بريد\n"
-#~ "وتختار اكتب بريد من قائمة السياق."
-
-#~ msgid ""
-#~ "Click here to change the selected application or to disable this feature."
-#~ msgstr "انقر هنا لتغيير التطبيق المنتقى أو تعطيل هذه الخاصية."
-
-#~ msgid "Select application"
-#~ msgstr "انتقِ تطبيقا"
-
-#~ msgid "Choose a custom Web Browser"
-#~ msgstr "اختر متصفح وِب مخصص"
-
-#~ msgid "Choose a custom Mail Reader"
-#~ msgstr "اختر قاريء بريد مخصص"
-
-#~ msgid ""
-#~ "Specify the application you want to use as\n"
-#~ "Web Browser in Terminal:"
-#~ msgstr ""
-#~ "حدد التطبيق الذي ترغب في استخدامه\n"
-#~ "كمتصف وِب في الطرفية:"
-
-#~ msgid ""
-#~ "Specify the application you want to use as\n"
-#~ "Mail Reader in Terminal:"
-#~ msgstr ""
-#~ "حدد التطبيق الذي ترغب في استخدامه\n"
-#~ "كقاريء بريد في الطرفية:"
-
-#~ msgid "_Browse..."
-#~ msgstr "_تصفّح..."
-
-#~ msgid "Disable this feature"
-#~ msgstr "عطِّل هذه الخاصية"
-
-#~ msgid "Other..."
-#~ msgstr "أخرى..."
-
-#~ msgid "No application selected"
-#~ msgstr "لم يُنتقى أي تطبيق"
-
-#~ msgid "Preferred Applications"
-#~ msgstr "التطبيقات المفضّلة"
-
-#~ msgid "Applications"
-#~ msgstr "التطبيقات"
-
-#~ msgid "Custom title"
-#~ msgstr "عنوان مخصص"
-
-#~ msgid "Tab title"
-#~ msgstr "عنوان اللسان"
-
-#~ msgid "_Applications..."
-#~ msgstr "_تطبيقات..."
-
-#~ msgid "Balsa"
-#~ msgstr "Balsa"
-
-#~ msgid "Epiphany Web Browser"
-#~ msgstr "متصفّح الوب إيبِفَني"
-
-#~ msgid "Novell Evolution"
-#~ msgstr "إفليوشن نوفل"
-
-#~ msgid "Default Web Browser (Xfce)"
-#~ msgstr "متصفح الوِب الإفتراضي (Xfce)"
-
-#~ msgid "Default Mail Reader (Xfce)"
-#~ msgstr "قاريء البريد الإفتراضي (Xfce)"
-
-#~ msgid "Mozilla Firefox"
-#~ msgstr "موزيلا فايرفوكس"
-
-#~ msgid "Galeon Web Browser"
-#~ msgstr "متصفح الوِب جاليون"
-
-#~ msgid "KMail"
-#~ msgstr "بريدك"
-
-#~ msgid "Konqueror"
-#~ msgstr "كونكيورر"
-
-#~ msgid "Lynx"
-#~ msgstr "لنكس"
-
-#~ msgid "Mozilla Browser"
-#~ msgstr "متصفح موزيلا"
-
-#~ msgid "Mozilla Mail"
-#~ msgstr "بريد موزيلا"
-
-#~ msgid "Mutt"
-#~ msgstr "Mutt"
-
-#~ msgid "Opera Browser"
-#~ msgstr "متصفح أوبرا"
-
-#~ msgid "Opera Mail"
-#~ msgstr "بريد أوبرا"
-
-#~ msgid "Debian Sensible Browser"
-#~ msgstr "متصفّح وِب ديبيان الحساس"
-
-#~ msgid "Sylpheed Claws"
-#~ msgstr "Sylpheed Claws"
-
-#~ msgid "Mozilla Thunderbird"
-#~ msgstr "موزيلا ثاندربيرد"
+msgstr "sekunde"

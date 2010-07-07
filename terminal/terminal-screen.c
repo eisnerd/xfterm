@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2004-2007 os-cillation e.K.
  *
@@ -52,6 +51,7 @@
 #if defined(GDK_WINDOWING_X11)
 #include <gdk/gdkx.h>
 #endif
+#include <glib/gstdio.h>
 
 
 
@@ -356,7 +356,8 @@ terminal_screen_get_property (GObject          *object,
   TerminalScreen *screen = TERMINAL_SCREEN (object);
   const gchar    *title = NULL;
   TerminalTitle   mode;
-  gchar          *initial = NULL;
+  gchar          *initial;
+  gchar          *parsed_title = NULL;
   gchar          *custom_title;
 
   switch (prop_id)
@@ -381,7 +382,9 @@ terminal_screen_get_property (GObject          *object,
             {
               /* show the initial title if the dynamic title is set to hidden */
               g_object_get (G_OBJECT (screen->preferences), "title-initial", &initial, NULL);
-              title = initial;
+              parsed_title = terminal_screen_parse_title (screen, initial);
+              title = parsed_title;
+              g_free (initial);
             }
           else if (G_LIKELY (screen->terminal != NULL))
             {
@@ -390,9 +393,12 @@ terminal_screen_get_property (GObject          *object,
 
           /* TRANSLATORS: title for the tab/window used when all other
            * possible titles were empty strings */
-          g_value_set_string (value, title != NULL ? title : _("Untitled"));
+          if (title == NULL || *title == '\0')
+            title = _("Untitled");
 
-          g_free (initial);
+          g_value_set_string (value, title);
+
+          g_free (parsed_title);
         }
       break;
 
@@ -465,9 +471,16 @@ terminal_screen_get_child_command (TerminalScreen   *screen,
                                    GError          **error)
 {
   struct passwd *pw;
-  const gchar   *shell_name = NULL;
-  const gchar   *shell_fullpath;
+  const gchar   *shell_name;
+  const gchar   *shell_fullpath = NULL;
   gboolean       command_login_shell;
+  guint          i;
+  const gchar   *shells[] = { "/bin/sh",
+                              "/bin/bash", "/usr/bin/bash",
+                              "/bin/dash", "/usr/bin/dash",
+                              "/bin/zsh",  "/usr/bin/zsh",
+                              "/bin/tcsh", "/usr/bin/tcsh",
+                              "/bin/ksh",  "/usr/bin/ksh" };
 
   if (screen->custom_command != NULL)
     {
@@ -476,37 +489,61 @@ terminal_screen_get_child_command (TerminalScreen   *screen,
     }
   else
     {
-      pw = getpwuid (getuid ());
-      if (G_UNLIKELY (pw == NULL))
-        {
-          g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_INVAL,
-                       _("Unable to determine your login shell."));
-          return FALSE;
-        }
-
-      g_object_get (G_OBJECT (screen->preferences),
-                    "command-login-shell", &command_login_shell,
-                    NULL);
-
-
-      if (pw->pw_shell == NULL || *(pw->pw_shell) == 0)
+      /* use the SHELL environement variable if we're in
+       * non-setuid mode and the path is executable */
+      if (geteuid () == getuid ()
+          && getegid () == getgid ())
         {
           shell_fullpath = g_getenv ("SHELL");
-          if (shell_fullpath == NULL)
-            /* the very last fallback */
-            shell_fullpath = "/bin/sh";
+          if (shell_fullpath != NULL
+              && g_access (shell_fullpath, X_OK) != 0)
+            shell_fullpath = NULL;
         }
-      else
-        shell_fullpath = pw->pw_shell;
 
-      if (shell_fullpath != NULL)
-        shell_name = strrchr (shell_fullpath, '/');
+      if (shell_fullpath == NULL)
+        {
+          pw = getpwuid (getuid ());
+          if (pw != NULL
+              && pw->pw_shell != NULL
+              && g_access (pw->pw_shell, X_OK) == 0)
+            {
+              /* set the shell from the password database */
+              shell_fullpath = pw->pw_shell;
+            }
+          else
+            {
+              /* lookup a good fallback */
+              for (i = 0; i < G_N_ELEMENTS (shells); i++)
+                {
+                  if (access (shells [i], X_OK) == 0)
+                    {
+                      shell_fullpath = shells [i];
+                      break;
+                    }
+                }
+
+              if (G_UNLIKELY (shell_fullpath == NULL))
+                {
+                  /* the system is truly broken */
+                  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_INVAL,
+                               _("Unable to determine your login shell."));
+                  return FALSE;
+                }
+            }
+        }
+
+      terminal_assert (shell_fullpath != NULL);
+      shell_name = strrchr (shell_fullpath, '/');
 
       if (shell_name != NULL)
         ++shell_name;
       else
         shell_name = shell_fullpath;
       *command = g_strdup (shell_fullpath);
+
+      g_object_get (G_OBJECT (screen->preferences),
+                    "command-login-shell", &command_login_shell,
+                    NULL);
 
       *argv = g_new (gchar *, 2);
       if (command_login_shell)
@@ -1054,6 +1091,9 @@ terminal_screen_vte_resize_window (VteTerminal    *terminal,
   gint       ypad;
   gint       grid_width;
   gint       grid_height;
+#if VTE_CHECK_VERSION (0, 24, 0)
+  GtkBorder *border = NULL;
+#endif
 
   terminal_return_if_fail (VTE_IS_TERMINAL (terminal));
   terminal_return_if_fail (TERMINAL_IS_SCREEN (screen));
@@ -1067,7 +1107,13 @@ terminal_screen_vte_resize_window (VteTerminal    *terminal,
 
   /* we have to calculate the grid size, because the signal
    * returns a size in pixels */
+#if VTE_CHECK_VERSION (0, 24, 0)
+  gtk_widget_style_get (GTK_WIDGET (terminal), "inner-border", &border, NULL);
+  xpad = border->left + border->right;
+  ypad = border->top + border->bottom;
+#else
   vte_terminal_get_padding (terminal, &xpad, &ypad);
+#endif
   grid_width = (width - xpad) / terminal->char_width;
   grid_height = (height - ypad) / terminal->char_height;
 
@@ -1408,16 +1454,25 @@ void
 terminal_screen_set_window_geometry_hints (TerminalScreen *screen,
                                            GtkWindow      *window)
 {
-  GdkGeometry hints;
-  gint        xpad;
-  gint        ypad;
+  GdkGeometry  hints;
+  gint         xpad;
+  gint         ypad;
+#if VTE_CHECK_VERSION (0, 24, 0)
+  GtkBorder   *border = NULL;
+#endif
 
   terminal_return_if_fail (TERMINAL_IS_SCREEN (screen));
   terminal_return_if_fail (VTE_IS_TERMINAL (screen->terminal));
   terminal_return_if_fail (GTK_WIDGET_REALIZED (screen));
   terminal_return_if_fail (GTK_WIDGET_REALIZED (window));
 
+#if VTE_CHECK_VERSION (0, 24, 0)
+  gtk_widget_style_get (GTK_WIDGET (screen->terminal), "inner-border", &border, NULL);
+  xpad = border->left + border->right;
+  ypad = border->top + border->bottom;
+#else
   vte_terminal_get_padding (VTE_TERMINAL (screen->terminal), &xpad, &ypad);
+#endif
 
   hints.base_width = xpad;
   hints.base_height = ypad;
@@ -1456,6 +1511,9 @@ terminal_screen_force_resize_window (TerminalScreen *screen,
   gint           rows;
   gint           xpad;
   gint           ypad;
+#if VTE_CHECK_VERSION (0, 24, 0)
+  GtkBorder     *border = NULL;
+#endif
 
   terminal_return_if_fail (TERMINAL_IS_SCREEN (screen));
   terminal_return_if_fail (VTE_IS_TERMINAL (screen->terminal));
@@ -1479,7 +1537,14 @@ terminal_screen_force_resize_window (TerminalScreen *screen,
   else
     rows = force_rows;
 
+#if VTE_CHECK_VERSION (0, 24, 0)
+  gtk_widget_style_get (GTK_WIDGET (screen->terminal), "inner-border", &border, NULL);
+  xpad = border->left + border->right;
+  ypad = border->top + border->bottom;
+#else
   vte_terminal_get_padding (VTE_TERMINAL (screen->terminal), &xpad, &ypad);
+#endif
+
   width += xpad + VTE_TERMINAL (screen->terminal)->char_width * columns;
   height += ypad + VTE_TERMINAL (screen->terminal)->char_height * rows;
 

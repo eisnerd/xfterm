@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2004-2007 os-cillation e.K.
  *
@@ -39,6 +38,8 @@ static void terminal_preferences_dialog_response          (GtkWidget            
                                                            TerminalPreferencesDialog *dialog);
 static void terminal_preferences_dialog_reset_compat      (GtkWidget                 *button,
                                                            TerminalPreferencesDialog *dialog);
+static void terminal_preferences_dialog_reset_word_chars  (GtkWidget                 *button,
+                                                           TerminalPreferencesDialog *dialog);
 static void terminal_preferences_dialog_background_mode   (GtkWidget                 *combobox,
                                                            TerminalPreferencesDialog *dialog);
 static void terminal_preferences_dialog_background_notify (GObject                   *object,
@@ -65,24 +66,28 @@ terminal_preferences_dialog_class_init (TerminalPreferencesDialogClass *klass)
 
 
 #define BIND_PROPERTIES(name, property) \
-  { object = gtk_builder_get_object (GTK_BUILDER (dialog), name); \
+  G_STMT_START { \
+  object = gtk_builder_get_object (GTK_BUILDER (dialog), name); \
   terminal_return_if_fail (G_IS_OBJECT (object)); \
-  exo_mutual_binding_new (G_OBJECT (dialog->preferences), name, \
-                          G_OBJECT (object), property); }
+  binding = exo_mutual_binding_new (G_OBJECT (dialog->preferences), name, \
+                                    G_OBJECT (object), property); \
+  dialog->bindings = g_slist_prepend (dialog->bindings, binding); \
+  } G_STMT_END
 
 
 
 static void
 terminal_preferences_dialog_init (TerminalPreferencesDialog *dialog)
 {
-  GError        *error = NULL;
-  guint          i;
-  GObject       *object, *object2;
-  GtkWidget     *editor;
-  gchar          palette_name[16];
-  GtkFileFilter *filter;
-  gchar         *file;
-  const gchar   *props_active[] = { "title-mode", "command-login-shell",
+  GError           *error = NULL;
+  guint             i;
+  GObject          *object, *object2;
+  GtkWidget        *editor;
+  gchar             palette_name[16];
+  GtkFileFilter    *filter;
+  gchar            *file;
+  ExoMutualBinding *binding;
+  const gchar      *props_active[] = { "title-mode", "command-login-shell",
                                     "command-update-records", "scrolling-single-line",
                                     "scrolling-on-output", "scrolling-on-keystroke",
                                     "scrolling-bar", "font-allow-bold",
@@ -95,16 +100,17 @@ terminal_preferences_dialog_init (TerminalPreferencesDialog *dialog)
                                     , "font-anti-alias"
 #endif
                                     };
-  const gchar   *props_color[] =  { "color-foreground", "color-cursor",
-                                    "color-background", "tab-activity-color",
-                                    "color-selection" };
+  const gchar      *props_color[] =  { "color-foreground", "color-cursor",
+                                       "color-background", "tab-activity-color",
+                                       "color-selection" };
 
   dialog->preferences = terminal_preferences_get ();
 
-  /* make sure the correct translation domain is set, since other programs
-   * could reset it, like for example the XFCE_LICENSE_GPL in terminal-dialogs.c,
-   * see http://bugzilla.xfce.org/show_bug.cgi?id=5842 */
+#if !LIBXFCE4UTIL_CHECK_VERSION (4, 7, 2)
+  /* restore the default translation domain. this is broken by libxfce4util
+   * < 4.7.2, after calling XFCE_LICENSE_GPL. see bug #5842. */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+#endif
 
   /* hack to initialize the XfceTitledDialog class */
   if (xfce_titled_dialog_get_type () == 0)
@@ -173,6 +179,12 @@ error:
   terminal_return_if_fail (G_IS_OBJECT (object));
   g_signal_connect (G_OBJECT (object), "clicked",
       G_CALLBACK (terminal_preferences_dialog_reset_compat), dialog);
+
+  /* reset word-chars button */
+  object = gtk_builder_get_object (GTK_BUILDER (dialog), "reset-word-chars");
+  terminal_return_if_fail (G_IS_OBJECT (object));
+  g_signal_connect (G_OBJECT (object), "clicked",
+      G_CALLBACK (terminal_preferences_dialog_reset_word_chars), dialog);
 
   /* add shortcuts editor */
   editor = g_object_new (TERMINAL_TYPE_SHORTCUT_EDITOR, NULL);
@@ -248,14 +260,21 @@ terminal_preferences_dialog_response (GtkWidget                 *widget,
                                       gint                       response,
                                       TerminalPreferencesDialog *dialog)
 {
+  GSList *li;
+
   /* check if we should open the user manual */
   if (G_UNLIKELY (response == 1))
     {
       /* open the "Preferences" section of the user manual */
-      terminal_dialogs_show_help (widget, "preferences", NULL);
+      terminal_dialogs_show_help (GTK_WINDOW (widget), "preferences.html", NULL);
     }
   else
     {
+      /* disconnect all the bindings */
+      for (li = dialog->bindings; li != NULL; li = li->next)
+        exo_mutual_binding_unbind (li->data);
+      g_slist_free (dialog->bindings);
+
       /* close the preferences dialog */
       gtk_widget_destroy (widget);
     }
@@ -283,6 +302,25 @@ terminal_preferences_dialog_reset_compat (GtkWidget                 *button,
           g_object_set_property (G_OBJECT (dialog->preferences), properties[i], &value);
           g_value_unset (&value);
         }
+    }
+}
+
+
+
+static void
+terminal_preferences_dialog_reset_word_chars (GtkWidget                 *button,
+                                              TerminalPreferencesDialog *dialog)
+{
+  GParamSpec  *spec;
+  GValue       value = { 0, };
+
+  spec = g_object_class_find_property (G_OBJECT_GET_CLASS (dialog->preferences), "word-chars");
+  if (G_LIKELY (spec != NULL))
+    {
+      g_value_init (&value, spec->value_type);
+      g_param_value_set_default (spec, &value);
+      g_object_set_property (G_OBJECT (dialog->preferences), "word-chars", &value);
+      g_value_unset (&value);
     }
 }
 

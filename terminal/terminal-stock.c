@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2004-2007 os-cillation e.K.
  *
@@ -61,7 +60,7 @@ static const TerminalStockIcon terminal_stock_icons[] =
  *
  * This function sets up the terminal stock icons.
  **/
-void
+gboolean
 terminal_stock_init (void)
 {
   GtkIconTheme   *icon_theme;
@@ -114,6 +113,8 @@ terminal_stock_init (void)
   /* cleanup */
   g_object_unref (G_OBJECT (icon_factory));
   gtk_icon_source_free (icon_source);
+
+  return gtk_icon_theme_has_icon (icon_theme, "utilities-terminal");
 }
 
 

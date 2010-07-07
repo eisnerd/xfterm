@@ -105,7 +105,7 @@
   </object>
   <object class="XfceTitledDialog" id="dialog">
     <property name="title" translatable="yes">Terminal Preferences</property>
-    <property name="icon_name">Terminal</property>
+    <property name="icon_name">gtk-preferences</property>
     <property name="type_hint">normal</property>
     <property name="has_separator">False</property>
     <child internal-child="vbox">
@@ -1787,6 +1787,28 @@ when double clicking:</property>
                                 <property name="position">1</property>
                               </packing>
                             </child>
+                            <child>
+                              <object class="GtkAlignment" id="alignment8">
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <property name="xscale">0</property>
+                                <property name="yscale">0</property>
+                                <child>
+                                  <object class="GtkButton" id="reset-word-chars">
+                                    <property name="label" translatable="yes">Rese_t double click options to defaults</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <property name="use_underline">True</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
                           </object>
                         </child>
                       </object>
@@ -1978,10 +2000,9 @@ when double clicking:</property>
     </data>
   </object>
   <object class="GtkAdjustment" id="background-darkness">
-    <property name="lower">0</property>
     <property name="upper">1</property>
     <property name="step_increment">0.01</property>
-    <property name="page_increment">0.1</property>
+    <property name="page_increment">0.10000000000000001</property>
   </object>
   <object class="GtkSizeGroup" id="sizegroup1">
     <widgets>

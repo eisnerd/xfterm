@@ -18,14 +18,14 @@ install-data-local:
 			installfiles=`echo $(srcdir)/html/$$lang/*`; \
 			for file in $$installfiles; do \
 				echo "--- Installing "$$file; \
-				$(INSTALL_DATA) $$file $$dest; \
+				$(INSTALL_DATA) $$file $$dest/; \
 			done; \
 			if test x"$$lang" != x"C" -a ! -d $(srcdir)/images/$$lang; then \
 				echo "--- Creating symlink to C images for $$lang"; \
-				ln -sf $(docdir)/C/images $(DESTDIR)$(docdir)/$$lang/images; \
+				ln -sf $(docdir)/C/images $$dest/images; \
 			fi \
 		fi; \
-		file=$(srcdir)/man/$$lang/$(PACKAGE).1; \
+		file=$(srcdir)/man/$$lang/$(PACKAGE_NAME).1; \
 		if test -f $$file ; then \
 			if test x"$$lang" = x"C"; then \
 				dest=$(DESTDIR)$(mandir)/man1; \
@@ -33,6 +33,7 @@ install-data-local:
 				dest=$(DESTDIR)$(mandir)/$$lang/man1; \
 			fi; \
 			$(mkinstalldirs) $$dest; \
+			dest=`echo $$dest/$(PACKAGE).1 | sed '$(program_transform_name)'`; \
 			$(INSTALL_DATA) $$file $$dest; \
 		fi \
 	done;
@@ -53,6 +54,7 @@ uninstall-local:
 		else \
 			dest=$(DESTDIR)$(mandir)/$$lang/man1/$(PACKAGE).1; \
 		fi; \
+		dest=`echo $$dest | sed '$(program_transform_name)'`; \
 		if test -f $$dest; then \
 			rm -f $$dest; \
 		fi \
@@ -105,7 +107,7 @@ doc-build.stamp: $(srcdir)/$(DOCUMENT) $(srcdir)/$(MANPAGE) $(srcdir)/$(HTML_STY
 		echo "Creating the HTML pages"; \
 		$(XSLTPROC) --nonet -o $(srcdir)/html/$$lang/ $(srcdir)/$(HTML_STYLESHEET) xgen-doc; \
 		echo "Creating the MAN page"; \
-		$(XSLTPROC) --nonet -o $(srcdir)/man/$$lang/ $(srcdir)/$(MAN_STYLESHEET) xgen-man; \
+		$(XSLTPROC) --nonet -o $(srcdir)/man/$$lang/$(PACKAGE_NAME).1 $(srcdir)/$(MAN_STYLESHEET) xgen-man; \
 		chmod -R u+w $(srcdir)/html/$$lang $(srcdir)/man/$$lang; \
 		rm -f xgen-doc xgen-man; \
 		echo; \

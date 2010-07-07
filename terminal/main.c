@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2004-2007 os-cillation e.K.
  *
@@ -43,9 +42,14 @@
 static void
 usage (void)
 {
+  gchar *name = g_get_prgname ();
+
+  /* set locale for the translations below */
+  gtk_set_locale ();
+
   g_print ("%s\n"
            "  %s [%s...]\n\n",
-           _("Usage:"), PACKAGE_NAME, _("OPTION"));
+           _("Usage:"), name, _("OPTION"));
 
   g_print ("%s:\n"
            "  -h, --help; -V, --version; --disable-server;\n"
@@ -89,9 +93,11 @@ usage (void)
            _("icon"));
 
   g_print (_("See the %s man page for full explanation of the options above."),
-           PACKAGE_NAME);
+           name);
 
   g_print ("\n\n");
+
+  g_free (name);
 }
 
 
@@ -110,15 +116,14 @@ main (int argc, char **argv)
   gchar          **nargv;
   gint             nargc;
   gint             n;
+  gchar           *name;
+  gboolean         has_util_icon;
 
   /* install required signal handlers */
   signal (SIGPIPE, SIG_IGN);
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
   g_set_application_name (_("Terminal"));
-
-  /* required because we don't call gtk_init() prior to usage() */
-  gtk_set_locale ();
 
 #ifndef NDEBUG
   /* Do NOT remove this line for now, If something doesn't work,
@@ -132,17 +137,23 @@ main (int argc, char **argv)
 
   if (G_UNLIKELY (show_version))
     {
-      g_print (_("%s (Xfce %s)\n\n"
+      /* set locale for the translations below */
+      gtk_set_locale ();
+
+      name = g_get_prgname ();
+      g_print (_("%s %s (Xfce %s)\n\n"
                  "Copyright (c) %s\n"
                  "        os-cillation e.K. All rights reserved.\n\n"
                  "Written by Benedikt Meurer <benny@xfce.org>.\n\n"
                  "Built with Gtk+-%d.%d.%d, running with Gtk+-%d.%d.%d.\n\n"
                  "Please report bugs to <%s>.\n"),
-                 PACKAGE_STRING, xfce_version_string (),
-                 "2003-2007",
+                 name, PACKAGE_VERSION,
+                 xfce_version_string (),
+                 "2003-2010",
                  GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION,
                  gtk_major_version, gtk_minor_version, gtk_micro_version,
                  PACKAGE_BUGREPORT);
+      g_free (name);
       return EXIT_SUCCESS;
     }
   else if (G_UNLIKELY (show_help))
@@ -186,12 +197,16 @@ main (int argc, char **argv)
       else
         {
           if (error->domain == TERMINAL_ERROR
-              && error->code == TERMINAL_ERROR_USER_MISMATCH)
+              && (error->code == TERMINAL_ERROR_USER_MISMATCH
+                  || error->code == TERMINAL_ERROR_DISPLAY_MISMATCH))
             {
               /* don't try to establish another service here */
               disable_server = TRUE;
+
 #ifndef NDEBUG
-              g_debug ("User mismatch when invoking remote terminal: %s", error->message);
+              g_debug ("%s mismatch when invoking remote terminal: %s",
+                       error->code == TERMINAL_ERROR_USER_MISMATCH ? "User" : "Display",
+                       error->message);
 #endif
             }
           else if (error->domain == TERMINAL_ERROR
@@ -224,10 +239,10 @@ main (int argc, char **argv)
   gtk_accelerator_set_default_mod_mask (modifiers | GDK_MOD4_MASK);
 
   /* register our stock icons */
-  terminal_stock_init ();
+  has_util_icon = terminal_stock_init ();
 
   /* set default window icon */
-  gtk_window_set_default_icon_name ("Terminal");
+  gtk_window_set_default_icon_name (has_util_icon ? "utilities-terminal" : "Terminal");
 
   app = g_object_new (TERMINAL_TYPE_APP, NULL);
 

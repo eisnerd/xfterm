@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Terminal 0.2.8\n"
-"POT-Creation-Date: 2009-12-14 18:06+0100\n"
+"POT-Creation-Date: 2010-01-29 11:29+0100\n"
 "PO-Revision-Date: 2009-07-14 11:42+0100\n"
 "Last-Translator: Jérôme Guelfucci <jeromeg@xfce.org>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: Terminal.1.xml:14(contrib) Terminal.1.xml:22(contrib)
 #, fuzzy
 msgid "Developer"
-msgstr "Core Developer de Xfce"
+msgstr "Développeur"
 
 #: Terminal.1.xml:15(firstname) Terminal.xml:63(firstname)
 msgid "Nick"
@@ -43,8 +43,9 @@ msgid "Meurer"
 msgstr "Meurer"
 
 #: Terminal.1.xml:26(jobtitle) Terminal.xml:47(jobtitle)
+#, fuzzy
 msgid "Software developer"
-msgstr "Développement logiciel"
+msgstr "Développeur de logiciels"
 
 #: Terminal.1.xml:27(orgname) Terminal.xml:23(holder) Terminal.xml:48(orgname)
 msgid "os-cillation"
@@ -60,38 +61,34 @@ msgstr "benny@xfce.org"
 
 #: Terminal.1.xml:37(manvolnum)
 msgid "1"
-msgstr ""
-
-#: Terminal.1.xml:38(refmiscinfo)
-msgid "0.4.2git-fa00dd5"
-msgstr ""
+msgstr "1"
 
 #: Terminal.1.xml:39(refmiscinfo)
 msgid "Xfce"
-msgstr ""
+msgstr "Xfce"
 
 #: Terminal.1.xml:44(refpurpose)
-#, fuzzy
 msgid "A Terminal emulator for X"
-msgstr "Émulateur de terminal"
+msgstr "Un émulateur de terminal pour X"
 
 #: Terminal.1.xml:48(title)
+#, fuzzy
 msgid "Synopsis"
-msgstr ""
+msgstr "Synopsis"
 
 #: Terminal.1.xml:50(command)
-#, fuzzy
 msgid "Terminal"
-msgstr "Émulateur de terminal"
+msgstr "Terminal"
 
 #: Terminal.1.xml:51(arg)
+#, fuzzy
 msgid "OPTION"
-msgstr ""
+msgstr "OPTION"
 
 #: Terminal.1.xml:56(title)
 #, fuzzy
 msgid "Description"
-msgstr "os-cillation"
+msgstr "Description"
 
 #: Terminal.1.xml:57(para) Terminal.xml:93(para)
 msgid ""
@@ -131,21 +128,25 @@ msgstr ""
 "effacer l'écran."
 
 #: Terminal.1.xml:79(title)
+#, fuzzy
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 #: Terminal.1.xml:82(title)
+#, fuzzy
 msgid "Option Summary"
-msgstr ""
+msgstr "Résumé des options"
 
 #: Terminal.1.xml:83(para)
+#, fuzzy
 msgid ""
 "Here is a summary of all the options, grouped by type. Explanations are in "
 "the following sections."
 msgstr ""
+"Voici un résumé de toutes les options, regroupées par type. Elles sont "
+"expliquées dans les sections suivantes."
 
 #: Terminal.1.xml:89(link) Terminal.1.xml:144(title)
-#, fuzzy
 msgid "General Options"
 msgstr "Préférences générales"
 
@@ -156,6 +157,10 @@ msgid ""
 "linkend=\"options-general-default-display\"/>; <xref linkend=\"options-"
 "general-default-working-directory\"/>"
 msgstr ""
+"<xref linkend=\"options-general-help\"/>; <xref linkend=\"options-general-"
+"version\"/>; <xref linkend=\"options-general-disable-server\"/>; <xref "
+"linkend=\"options-general-default-display\"/>; <xref linkend=\"options-"
+"general-default-working-directory\"/>"
 
 #: Terminal.1.xml:101(link) Terminal.1.xml:194(title)
 msgid "Window or Tab Separators"
@@ -2647,7 +2652,7 @@ msgid ""
 "new feature gets added if you provide good arguments for the feature. It "
 "will increase the chance of addition even more if you provide a patch that "
 "implements the requested feature, but make sure that you read the file "
-"<ulink url=\"http://svn.xfce.org/svn/xfce/terminal/trunk/HACKING\">HACKING</"
+"<ulink url=\"http://git.xfce.org/apps/terminal/tree/HACKING\">HACKING</"
 "ulink> - especially the section labeled <emphasis>Coding Style</emphasis> - "
 "before you start hacking up the source."
 msgstr ""
@@ -2657,7 +2662,7 @@ msgstr ""
 "des chances d'être ajoutée. Ces chances seront décuplées si vous fournissez "
 "un patch implémentant cette fonctionnalité, mais avant de commencer à "
 "modifier le code source, lisez attentivement le fichier <ulink url=\"http://"
-"svn.xfce.org/svn/xfce/terminal/trunk/HACKING\">HACKING</ulink>, tout "
+"git.xfce.org/apps/terminal/tree/HACKING\">HACKING</ulink>, tout "
 "particulièrement la section intitulée <emphasis>Coding Style</emphasis>."
 
 #: Terminal.xml:1322(para)
@@ -2727,6 +2732,9 @@ msgid "translator-credits"
 msgstr ""
 "Maximilian Schleiss <maximilian@xfce.org>, 2007.\n"
 "Mike Massonnet <mmassonnet@gmail.org>, 2007."
+
+#~ msgid "0.4.2git-fa00dd5"
+#~ msgstr "0.4.2git-fa00dd5"
 
 #~ msgid "Xfce desktop environment"
 #~ msgstr "environnement de bureau Xfce"
