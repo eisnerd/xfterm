@@ -49,6 +49,7 @@ static void               terminal_app_finalize                 (GObject        
 static void               terminal_app_update_accels            (TerminalApp        *app);
 static void               terminal_app_update_mnemonics         (TerminalApp        *app);
 static GtkWidget         *terminal_app_create_window            (TerminalApp        *app,
+			                                         gchar            **command,
                                                                  gboolean            fullscreen,
                                                                  TerminalVisibility  menubar,
                                                                  TerminalVisibility  borders,
@@ -207,6 +208,7 @@ terminal_app_update_mnemonics (TerminalApp *app)
 
 static GtkWidget*
 terminal_app_create_window (TerminalApp       *app,
+			    gchar            **command,
                             gboolean           fullscreen,
                             TerminalVisibility menubar,
                             TerminalVisibility borders,
@@ -214,7 +216,7 @@ terminal_app_create_window (TerminalApp       *app,
 {
   GtkWidget *window;
 
-  window = terminal_window_new (fullscreen, menubar, borders, toolbars);
+  window = terminal_window_new (command, fullscreen, menubar, borders, toolbars);
   g_signal_connect (G_OBJECT (window), "destroy",
                     G_CALLBACK (terminal_app_window_destroyed), app);
   g_signal_connect (G_OBJECT (window), "new-window",
@@ -283,7 +285,7 @@ terminal_app_new_window_with_terminal (TerminalWindow *existing,
   terminal_return_if_fail (TERMINAL_IS_SCREEN (terminal));
   terminal_return_if_fail (TERMINAL_IS_APP (app));
 
-  window = terminal_app_create_window (app, FALSE,
+  window = terminal_app_create_window (app, NULL, FALSE,
                                        TERMINAL_VISIBILITY_DEFAULT,
                                        TERMINAL_VISIBILITY_DEFAULT,
                                        TERMINAL_VISIBILITY_DEFAULT);
@@ -458,6 +460,7 @@ terminal_app_open_window (TerminalApp        *app,
   terminal_return_if_fail (attr != NULL);
 
   window = terminal_app_create_window (app,
+				       attr->command,
                                        attr->fullscreen,
                                        attr->menubar,
                                        attr->borders,

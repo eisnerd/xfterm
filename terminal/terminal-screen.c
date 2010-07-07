@@ -1648,6 +1648,23 @@ terminal_screen_get_working_directory (TerminalScreen *screen)
 
   if (screen->pid >= 0)
     {
+	gboolean got = FALSE;
+	gchar *cmd = g_strdup_printf("/home/eisd/bin/screens.readpwd %d", screen->pid);
+	FILE *readpwd = popen(cmd, "r");
+	if (readpwd != NULL)
+	{
+		while (!feof(readpwd))
+			if (fgets(buffer, sizeof(buffer), readpwd) != NULL && *buffer == '/')
+			{
+				g_free (screen->working_directory);
+          			screen->working_directory = g_strdup (buffer);
+				got = TRUE;
+			}
+		pclose(readpwd);
+		if (got)
+			return screen->working_directory;
+	}
+			
       /* make sure that we use linprocfs on all systems */
 #if defined(__FreeBSD__)
       file = g_strdup_printf ("/compat/linux/proc/%d/cwd", screen->pid);

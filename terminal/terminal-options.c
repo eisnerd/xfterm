@@ -251,11 +251,28 @@ terminal_window_attr_parse (gint              argc,
           break;
         }
       else if (terminal_option_cmp ("command", 'e', argc, argv, &n, &s))
+	{
+	  if (G_UNLIKELY (s == NULL))
+	    {
+	      g_set_error (error, G_SHELL_ERROR, G_SHELL_ERROR_FAILED,
+			   _("Option \"--command/-e\" requires specifying "
+			     "the command to run as its parameter"));
+	      goto failed;
+	    }
+	  else
+	    {
+	      g_strfreev (tab_attr->command);
+	      tab_attr->command = NULL;
+	      if (!g_shell_parse_argv (s, NULL, &tab_attr->command, error))
+		goto failed;
+	    }
+	}
+      else if (terminal_option_cmp ("command", 'E', argc, argv, &n, &s))
         {
           if (G_UNLIKELY (s == NULL))
             {
               g_set_error (error, G_SHELL_ERROR, G_SHELL_ERROR_FAILED,
-                           _("Option \"--command/-e\" requires specifying "
+                           _("Option \"--command/-E\" requires specifying "
                              "the command to run as its parameter"));
               goto failed;
             }
@@ -263,7 +280,7 @@ terminal_window_attr_parse (gint              argc,
             {
               g_strfreev (tab_attr->command);
               tab_attr->command = NULL;
-              if (!g_shell_parse_argv (s, NULL, &tab_attr->command, error))
+              if (!g_shell_parse_argv (s, NULL, &win_attr->command, error))
                 goto failed;
             }
         }
