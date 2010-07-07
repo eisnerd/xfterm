@@ -199,6 +199,7 @@ struct _TerminalWindow
   GtkUIManager        *ui_manager;
   guint                gomenu_merge_id;
 
+  gchar               **command;
   GtkWidget           *menubar;
   GtkWidget           *toolbars;
   GtkWidget           *notebook;
@@ -1258,6 +1259,8 @@ terminal_window_action_new_tab (GtkAction       *action,
       terminal_screen_set_working_directory (TERMINAL_SCREEN (terminal),
                                              directory);
     }
+  if (window->command != NULL)
+      terminal_screen_set_custom_command (TERMINAL_SCREEN (terminal), window->command);
 
   terminal_window_add (window, TERMINAL_SCREEN (terminal));
   terminal_screen_launch_child (TERMINAL_SCREEN (terminal));
@@ -1655,7 +1658,8 @@ terminal_window_action_about (GtkAction      *action,
  * Return value:
  **/
 GtkWidget*
-terminal_window_new (gboolean           fullscreen,
+terminal_window_new (gchar            **command,
+                     gboolean           fullscreen,
                      TerminalVisibility menubar,
                      TerminalVisibility borders,
                      TerminalVisibility toolbars)
@@ -1665,6 +1669,8 @@ terminal_window_new (gboolean           fullscreen,
   gboolean        setting;
 
   window = g_object_new (TERMINAL_TYPE_WINDOW, NULL);
+
+  window->command = command;
 
   /* setup full screen */
   action = gtk_action_group_get_action (window->action_group, "fullscreen");

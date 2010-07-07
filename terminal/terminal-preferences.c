@@ -100,6 +100,7 @@ enum
   PROP_COLOR_PALETTE16,
   PROP_COMMAND_UPDATE_RECORDS,
   PROP_COMMAND_LOGIN_SHELL,
+  PROP_COMMAND_DEFAULT,
   PROP_FONT_ALLOW_BOLD,
 #if TERMINAL_HAS_ANTI_ALIAS_SETTING
   PROP_FONT_ANTI_ALIAS,
@@ -951,11 +952,22 @@ terminal_preferences_class_init (TerminalPreferencesClass *klass)
    * TerminalPreferences:command-login-shell:
    **/
   g_object_class_install_property (gobject_class,
-                                   PROP_COMMAND_LOGIN_SHELL,
-                                   g_param_spec_boolean ("command-login-shell",
-                                                         "command-login-shell",
-                                                         "CommandLoginShell",
-                                                         FALSE,
+				   PROP_COMMAND_LOGIN_SHELL,
+				   g_param_spec_boolean ("command-login-shell",
+							 "command-login-shell",
+							 "CommandLoginShell",
+							 FALSE,
+							 EXO_PARAM_READWRITE));
+
+  /**
+   * TerminalPreferences:command-default:
+   **/
+  g_object_class_install_property (gobject_class,
+                                   PROP_COMMAND_DEFAULT,
+                                   g_param_spec_string ("command-default",
+                                                         "command-default",
+                                                         "CommandDefault",
+                                                         "",
                                                          EXO_PARAM_READWRITE));
 
   /**
