@@ -284,6 +284,7 @@ terminal_widget_context_menu (TerminalWidget *widget,
   gint         tag;
   gint         pattern_type = PATTERN_TYPE_NONE;
 
+  return;
   g_signal_emit (G_OBJECT (widget), widget_signals[GET_CONTEXT_MENU], 0, &menu);
   if (G_UNLIKELY (menu == NULL))
     return;
